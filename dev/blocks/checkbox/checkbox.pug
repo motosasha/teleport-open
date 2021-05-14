@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (checkbox)
+
+mixin checkbox(isChecked, isLabeled, label, mod)
+	label.checkbox(class=mod)
+		if isChecked === true
+			input.checkbox__input(type="checkbox" checked)
+			.checkbox__fake-input
+				.checkbox__mark
+			if isLabeled === true
+				.checkbox__label!= label
+		else
+			input.checkbox__input(type="checkbox")
+			.checkbox__fake-input
+				.checkbox__mark
+			if isLabeled === true
+				.checkbox__label!= label

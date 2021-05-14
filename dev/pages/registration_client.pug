@@ -1,0 +1,54 @@
+extends ../pug/layout_default.pug
+
+block pageMain
+	.grid
+		.grid__row
+			.grid__col
+		.grid__row
+			.grid__col.grid__col_md_8.grid__col-offset_md_2.grid__col_lg_6.grid__col-offset_lg_3.grid__col_xxl_4.grid__col-offset_xxl_4
+				section.section
+					h1.page__heading.page__heading_tac Регистрация клиента
+
+					.tabs
+						ul.tabs__caption
+							li.tabs__item.tabs__item_active Без сертификата ЭЦП
+							li.tabs__item По сертификату ЭЦП
+						.tabs__content
+							.tabs__tab.tabs__tab_active
+								form.form
+									.form__row
+										.form__item
+											+field('ИНН', placeholder, value, info, mod, true)
+										.form__item
+											+field('ФИО', placeholder, value, info, mod, true)
+										.form__item
+											+field_phone('Телефон', placeholder, value, info, mod, true)
+										.form__item
+											+field_mail('Электронная почта', placeholder, value, info, mod, true)
+									.form__row
+										label.checkbox
+											input.checkbox__input(type="checkbox" checked)
+											.checkbox__fake-input
+												.checkbox__mark
+											.checkbox__label Нажимая кнопку «Зарегистрироваться», я даю свое согласие на обработку моей персональной информации на уловиях, определенных #[a.link(href="#") Политикой конфиденциальности], а также принимаю условия #[a.link(href="#") Договора-оферты].
+										button.button.form__end-button Зарегистрироваться
+							.tabs__tab
+								.cripto
+									.cripto__warning
+										svg.cripto__icon.svg
+											use(xlink:href='img/svgSprite.svg#icon__info')
+										.cripto__message У вас не установлен или не включён плагин КриптоПро ЭЦП Browser plug-in для работы с сервисом
+									.cripto__inner
+										.cripto__text Для продолжения работы вам необходимо:
+										ol.cripto__list
+											li.cripto__li Сохранить последнюю версию установщика
+											li.cripto__li Запустить установочны файл #[a.link(href='#', download) Teleport.Installer] и выполнить действия по установке
+											li.cripto__li Включить расширение #[strong CryproPro CAsES Browser Plugin]
+											li.cripto__li После установки и включения обновить страницу
+								br
+								br
+								br
+								.cripto
+									.cripto__enter
+										.cripto__title У вас установлено и включено расширение #[strong CryproPro CAsES Browser Plugin], вы можете войти
+										button.button Войти

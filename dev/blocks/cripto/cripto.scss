@@ -1,0 +1,58 @@
+// В этом файле должны быть стили для БЭМ-блока cripto, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cripto {
+	&__warning {
+		color: $red_01;
+		display: flex;
+		fill: $red_01;;
+	}
+	&__icon {
+		fill: inherit;
+		flex: 0 0 auto;
+		height: 24px;
+		margin-right: 8px;
+		width: 24px;
+	}
+	&__message {
+		color: inherit;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 133%;
+	}
+	&__inner {
+		padding-left: 32px;
+	}
+	&__text {
+		font-size: 15px;
+		line-height: 107%;
+		margin: 16px 0;
+	}
+	&__list {
+		margin: 0;
+		padding: 0 0 0 16px;
+	}
+	&__li {
+		font-size: 14px;
+		line-height: 115%;
+		& + & {
+			margin-top: 12px;
+		}
+	}
+	&__enter {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 160px;
+		justify-content: center;
+		margin: 0 auto;
+		max-width: 320px;
+	}
+	&__title {
+		font-size: 18px;
+		line-height: 120%;
+		margin: 0 0 16px;
+		text-align: center;
+	}
+}

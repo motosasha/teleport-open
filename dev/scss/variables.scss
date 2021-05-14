@@ -1,0 +1,47 @@
+$color-black:                   #000000 !default;
+$color-white:                   #ffffff !default;
+
+$monochrome_01:                 #181c32 !default;
+$monochrome_02:                 #3f4254 !default;
+$monochrome_03:                 #5e6278 !default;
+$monochrome_04:                 #7e8299 !default;
+$monochrome_05:                 #b5b5c3 !default;
+$monochrome_06:                 #d1d3e0 !default;
+$monochrome_07:                 #e4e6ef !default;
+$monochrome_08:                 #ebedf3 !default;
+$monochrome_09:                 #f3f6f9 !default;
+$monochrome_10:                 #ffffff !default;
+
+$blue_01:                       #3e97ff !default;
+$red_01:                        #ff3d60 !default;
+$red_03:                        #dd294a !default;
+
+$body-bg:                       $monochrome_09 !default;
+$body-color:                    $monochrome_01 !default;
+
+$font-family-primary:           'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !default;
+$font-family-base:              $font-family-primary !default;
+
+$font-size-root:                null !default;
+$font-size-base:                1rem !default;
+
+$font-weight-normal:            400 !default;
+$font-weight-base:              $font-weight-normal !default;
+$line-height-base:              100% !default;
+
+$screen-xs:                     0 !default;
+$screen-sm:                     576px !default;
+$screen-md:                     768px !default;
+$screen-lg:                     992px !default;
+$screen-xl:                     1200px !default;
+$screen-xxl:                    1400px !default;
+
+$container-xs:                  100% !default;
+$container-sm:                  540px !default;
+$container-md:                  720px !default;
+$container-lg:                  960px !default;
+$container-xl:                  1140px !default;
+$container-xxl:                 1340px !default;
+
+$grid-columns:                  12 !default;
+$grid-gutter-width:             25px !default;

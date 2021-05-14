@@ -1,0 +1,152 @@
+// В этом файле должны быть стили для БЭМ-блока footer, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.footer {
+	background: $monochrome_10;
+	box-shadow: inset 0 1px 0 $monochrome_06;
+	position: relative;
+	@media (min-width: $screen-sm) {
+		//padding-top: 400px;
+	}
+	@media (min-width: $screen-md) {
+		//padding-top: 0;
+	}
+	&__top {
+		padding: 20px 0;
+		position: relative;
+		&::after {
+			background: $monochrome_06;
+			bottom: 0;
+			content: '';
+			height: 1px;
+			position: absolute;
+			width: 100%;
+			@media (min-width: $screen-sm) {
+				transform: translateX(-16px);
+				width: calc(100% + 32px);
+			}
+		}
+	}
+	&__bottom {
+		display: grid;
+		grid-gap: 25px;
+		grid-template-areas:
+			'prod'
+			'docs'
+			'last'
+			'info';
+		grid-template-columns: 1fr;
+		padding: 32px 0 48px;
+		@media (min-width: $screen-sm) {
+			grid-template-areas:
+				'info prod'
+				'last docs';
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (min-width: $screen-md) {
+			grid-template-areas:
+				'info prod docs'
+				'last last last';
+			grid-template-columns: calc(45% - 25px) 30% calc(25% - 25px);
+		}
+		@media (min-width: $screen-lg) {
+			grid-template-areas:
+				'info prod docs'
+				'last last last';
+			grid-template-columns: calc(50% - 25px) 30% calc(20% - 25px);
+		}
+		@media (min-width: $screen-xl) {
+			grid-template-areas: 'info prod docs last';
+			grid-template-columns: 355px 290px 230px 165px;
+		}
+		@media (min-width: $screen-xxl) {
+			grid-template-areas: 'info prod docs last';
+			grid-template-columns: 420px 340px 280px 198px;
+		}
+	}
+	&__logo {
+		height: 40px;
+		width: 206px;
+	}
+	&__col {
+		&:nth-child(1) {
+			grid-area: info;
+		}
+		&:nth-child(2) {
+			grid-area: prod;
+		}
+		&:nth-child(3) {
+			grid-area: docs;
+		}
+		&:nth-child(4) {
+			align-items: start;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			grid-area: last;
+			@media (min-width: $screen-sm) {
+				align-items: center;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			@media (min-width: $screen-md) {
+				justify-content: space-between;
+			}
+			@media (min-width: $screen-xl) {
+				align-items: flex-end;
+				flex-direction: column;
+			}
+		}
+	}
+	&__copy {
+		font-size: 15px;
+		line-height: 107%;
+		margin-top: 32px;
+		span {
+			font-weight: 700;
+		}
+	}
+	&__hash {
+		color: $blue_01;
+		font-size: 24px;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		line-height: 100%;
+		width: calc(50% + 12px);
+		@media (min-width: $screen-md) {
+			width: 45%;
+		}
+		@media (min-width: $screen-lg) {
+			width: 50%;
+		}
+		@media (min-width: $screen-xl) {
+			width: auto;
+		}
+	}
+	&__socials {
+		margin: 16px 0;
+		@media (min-width: $screen-md) {
+			margin: 0 auto 0 0;
+		}
+		@media (min-width: $screen-xl) {
+			margin: 24px 0 40px;
+		}
+	}
+	&__button {
+		border: 1px solid $red_01;
+		border-radius: 4px;
+		color: $red_01;
+		display: block;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 115%;
+		padding: 8px 12px;
+		text-decoration: none;
+		transition: all .25s ease;
+		&:hover {
+			background: $red_01;
+			color: $monochrome_10;
+		}
+	}
+}

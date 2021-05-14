@@ -1,0 +1,127 @@
+// В этом файле должны быть стили для БЭМ-блока grid, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.grid {
+	@include container(25px, 25px, 25px, 25px, 25px);
+	&__row {
+		@include row(25px, 25px, 25px, 25px, 25px);
+	}
+	&__col {
+		@include col(xs, 12, $grid-columns, 25px);
+		@include col(sm, 12, $grid-columns, 25px);
+		&_md_5 {
+			@include col(md, 5, $grid-columns, 25px);
+		}
+		&_md_6 {
+			@include col(md, 6, $grid-columns, 25px);
+		}
+		&_md_7 {
+			@include col(md, 7, $grid-columns, 25px);
+		}
+		&_lg_5 {
+			@include col(lg, 5, $grid-columns, 25px);
+		}
+		&_lg_7 {
+			@include col(lg, 7, $grid-columns, 25px);
+		}
+
+
+		&_sm_6 {
+			@include col(sm, 6, $grid-columns, 25px);
+		}
+		&_md_3 {
+			@include col(md, 3, $grid-columns, 25px);
+		}
+		&_md_6 {
+			@include col(md, 6, $grid-columns, 25px);
+		}
+		&_md_7 {
+			@include col(md, 7, $grid-columns, 25px);
+		}
+		&_md_8 {
+			@include col(md, 8, $grid-columns, 25px);
+		}
+		&-offset_md_2 {
+			@include col-offset(md, 2, $grid-columns);
+		}
+
+		&_lg_1 {
+			@include col(lg, 1, $grid-columns, 25px);
+		}
+		&_lg_2 {
+			@include col(lg, 2, $grid-columns, 25px);
+		}
+		&_lg_3 {
+			@include col(lg, 3, $grid-columns, 25px);
+		}
+		&_lg_4 {
+			@include col(lg, 4, $grid-columns, 25px);
+		}
+		&_lg_5 {
+			@include col(lg, 5, $grid-columns, 25px);
+		}
+		&_lg_6 {
+			@include col(lg, 6, $grid-columns, 25px);
+		}
+		&_lg_7 {
+			@include col(lg, 7, $grid-columns, 25px);
+		}
+		&_lg_8 {
+			@include col(lg, 8, $grid-columns, 25px);
+		}
+		&_lg_9 {
+			@include col(lg, 9, $grid-columns, 25px);
+		}
+		&_lg_10 {
+			@include col(lg, 10, $grid-columns, 25px);
+		}
+		&_lg_11 {
+			@include col(lg, 11, $grid-columns, 25px);
+		}
+		&_lg_12 {
+			@include col(lg, 12, $grid-columns, 25px);
+		}
+		&-offset_lg_1 {
+			@include col-offset(lg, 1, $grid-columns);
+		}
+		&-offset_lg_3 {
+			@include col-offset(lg, 3, $grid-columns);
+		}
+
+		&_xl_2 {
+			@include col(xl, 2, $grid-columns, 25px);
+		}
+		&_xl_3 {
+			@include col(xl, 3, $grid-columns, 25px);
+		}
+		&_xl_4 {
+			@include col(xl, 4, $grid-columns, 25px);
+		}
+		&_xl_6 {
+			@include col(xl, 6, $grid-columns, 25px);
+		}
+		&_xl_8 {
+			@include col(xl, 8, $grid-columns, 25px);
+		}
+		&-offset_xl_2 {
+			@include col-offset(xl, 2, $grid-columns);
+		}
+		&-offset_xl_3 {
+			@include col-offset(xl, 3, $grid-columns);
+		}
+
+		&_xxl_2 {
+			@include col(xxl, 2, $grid-columns, 25px);
+		}
+		&_xxl_3 {
+			@include col(xxl, 3, $grid-columns, 25px);
+		}
+		&_xxl_4 {
+			@include col(xxl, 4, $grid-columns, 25px);
+		}
+		&-offset_xxl_4 {
+			@include col-offset(xxl, 4, $grid-columns);
+		}
+	}
+}

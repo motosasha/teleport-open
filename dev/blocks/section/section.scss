@@ -1,0 +1,28 @@
+// В этом файле должны быть стили для БЭМ-блока section, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.section {
+	padding: 32px 0 40px;
+	position: relative;
+	@media (min-width: $screen-sm) {
+		padding: 48px 0 56px;
+	}
+	@media (min-width: $screen-xl) {
+		padding: 88px 0 96px;
+	}
+	&__anchor {
+		background: #000;
+		height: 1px;
+		left: 0;
+		position: absolute;
+		top: -64px;
+		width: 10px;
+		@media (min-width: $screen-md) {
+			top: -96px;
+		}
+		@media (min-width: $screen-xl) {
+			top: -48px;
+		}
+	}
+}

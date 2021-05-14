@@ -1,0 +1,186 @@
+extends ../pug/layout_default.pug
+
+block pageMain
+	.grid
+		.grid__row
+			.grid__col
+		.grid__row
+			.grid__col.grid__col_lg_10.grid__col-offset_lg_1.grid__col_xl_8.grid__col-offset_xl_2
+				section.section
+					h1.page__heading.page__heading_tac Регистрация агента
+
+					.tabs
+						ul.tabs__caption
+							li.tabs__item.tabs__item_active Юридическое лицо
+							li.tabs__item Индивидуальный предприниматель
+							li.tabs__item Самозанятый
+						.tabs__content
+							.tabs__tab.tabs__tab_active
+								form.form
+									.form__row
+										.form__item.form__item_half
+											+field('ИНН', placeholder, value, info, mod, true)
+										.form__item.form__item_half.form__item_loader
+											img(src='img/img__loader.gif' style='display:none')
+										.form__item.form__item_half
+											+field('КПП', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('ОГРН', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Наименование организации', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('ФИО руководителя', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Должность руководителя', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field_select('Основание полномочий руководителя', mod, ['Устав', 'Пункт', 'Пункт'])
+									.form__row
+										.form__item
+											+field_select('Система налогообложения', mod, ['Пункт', 'Пункт', 'Пункт'])
+									.form__row
+										.form__item.form__item_half
+											+field('ОКВЭД', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Уставный капитал', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field_date('Дата регистрации', placeholder, value, info, mod, isReq)
+										.form__item.form__item_half
+											+field('Численность сотрудников', placeholder, value, info, mod, true)
+									.form__row
+										.form__item
+											+field_textarea('Юридический адрес', placeholder, info, mod, isCheckbox, checkboxLabel)
+										.form__item
+											+field_textarea('Почтовый адрес', placeholder, info, mod, true, 'Почтовый адрес совпадает с юридическим')
+										.form__item
+											+field_textarea('Фактический адрес', placeholder, info, mod, true, 'Фактический адрес совпадает с юридическим')
+									.form__row
+										.form__item
+											+field_file('Устав', info, true)
+										.form__item
+											+field_file('Протокол назначения директора', info, true)
+										.form__item
+											+field_file('Паспорт директора', info, true)
+									.form__row
+										.form__item.form__item_half
+											+field('БИК банка', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('К/С банка', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Р/С банка', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Наименование банка', placeholder, value, info, mod, true)
+									.form__row
+										.form__item.form__item_half
+											+field_phone('Телефон', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field_mail('Электронная почта', placeholder, value, info, mod, true)
+									.form__row
+										label.checkbox
+											input.checkbox__input(type="checkbox" checked)
+											.checkbox__fake-input
+												.checkbox__mark
+											.checkbox__label Нажимая кнопку «Зарегистрироваться», я даю свое согласие на обработку моей персональной информации на уловиях, определенных #[a.link(href="#") Политикой конфиденциальности], а также принимаю условия #[a.link(href="#") Договора-оферты].
+										button.button.form__end-button Зарегистрироваться
+							.tabs__tab
+								form.form
+									.form__row
+										.form__item.form__item_half
+											+field('ИНН', placeholder, value, info, mod, true)
+										.form__item.form__item_half.form__item_loader
+											img(src='img/img__loader.gif' style='display:none')
+										.form__item.form__item_half
+											+field('Наименование', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('ОГРНИП', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('ОКВЭД', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field_date('Дата регистрации', placeholder, value, info, mod, isReq)
+									.form__row
+										.form__item
+											+field_select('Система налогообложения', mod, ['Пункт', 'Пункт', 'Пункт'])
+									.form__row
+										.form__item
+											+field_textarea('Адрес регистрации', placeholder, info, mod, isCheckbox, checkboxLabel)
+										.form__item
+											+field_textarea('Почтовый адрес', placeholder, info, mod, true, 'Почтовый адрес совпадает с адресом регистрации')
+										.form__item
+											+field_textarea('Фактический адрес', placeholder, info, mod, true, 'Фактический адрес совпадает с адресом регистрации')
+									.form__row
+										.form__item
+											+field_file('Паспорт', info, true)
+									.form__row
+										.form__item.form__item_half
+											+field('БИК банка', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('К/С банка', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Р/С банка', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Наименование банка', placeholder, value, info, mod, true)
+									.form__row
+										.form__item.form__item_half
+											+field_phone('Телефон', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field_mail('Электронная почта', placeholder, value, info, mod, true)
+									.form__row
+										label.checkbox
+											input.checkbox__input(type="checkbox" checked)
+											.checkbox__fake-input
+												.checkbox__mark
+											.checkbox__label Нажимая кнопку «Зарегистрироваться», я даю свое согласие на обработку моей персональной информации на уловиях, определенных #[a.link(href="#") Политикой конфиденциальности], а также принимаю условия #[a.link(href="#") Договора-оферты].
+										button.button.form__end-button Зарегистрироваться
+							.tabs__tab
+								form.form
+									.form__row
+										.form__item.form__item_half
+											+field('Фамилия', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Имя', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Отчество', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Серия и номер паспорта', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field_date('Дата выдачи паспорта', placeholder, value, info, mod, isReq)
+										.form__item.form__item_half
+											+field_date('Дата рождения', placeholder, value, info, mod, isReq)
+									.form__row
+										.form__item
+											+field_textarea('Кем выдан паспорт', placeholder, info, mod, isCheckbox, checkboxLabel)
+									.form__row
+										.form__item
+											+field_textarea('Адрес регистрации', placeholder, info, mod, isCheckbox, checkboxLabel)
+									.form__row
+										.form__item.form__item_half
+											+field('ИНН', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('СНИЛС', placeholder, value, info, mod, true)
+									.form__row
+										.form__item
+											+field_file('Паспорт (главный разворот)', info, true)
+										.form__item
+											+field_file('Паспорт (актуальная прописка)', info, true)
+										.form__item
+											+field_file('СНИЛС', info, true)
+									.form__row
+										.form__item.form__item_half
+											+field('БИК банка', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('К/С банка', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Р/С банка', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field('Наименование банка', placeholder, value, info, mod, true)
+									.form__row
+										.form__item.form__item_half
+											+field_phone('Телефон', placeholder, value, info, mod, true)
+										.form__item.form__item_half
+											+field_mail('Электронная почта', placeholder, value, info, mod, true)
+									.form__row
+										label.checkbox
+											input.checkbox__input(type="checkbox" checked)
+											.checkbox__fake-input
+												.checkbox__mark
+											.checkbox__label Нажимая кнопку «Зарегистрироваться», я даю свое согласие на обработку моей персональной информации на уловиях, определенных #[a.link(href="#") Политикой конфиденциальности], а также принимаю условия #[a.link(href="#") Договора-оферты].
+										button.button.form__end-button Зарегистрироваться

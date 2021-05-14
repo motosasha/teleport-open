@@ -1,0 +1,52 @@
+// В этом файле должны быть стили для БЭМ-блока tabs, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.tabs {
+	&__caption {
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 8px;
+		padding: 0;
+		@media (min-width: $screen-sm) {
+			flex-direction: row;
+			margin: 0;
+		}
+	}
+	&__item {
+		align-items: center;
+		border-radius: 8px;
+		cursor: pointer;
+		display: flex;
+		font-size: 14px;
+		font-weight: 500;
+		justify-content: center;
+		line-height: 115%;
+		text-align: center;
+		padding: 12px;
+		user-select: none;
+		@media (min-width: $screen-sm) {
+			border-radius: 8px 8px 0 0;
+			font-size: 16px;
+			line-height: 100%;
+			padding: 16px;
+		}
+		&_active {
+			background: $monochrome_10;
+		}
+	}
+	&__content {
+		background: $monochrome_10;
+		border-radius: 8px;
+		padding: 24px 16px 16px;
+		@media (min-width: $screen-sm) {
+			border-radius: 0 0 8px 8px;
+		}
+	}
+	&__tab {
+		display: none;
+		&_active {
+			display: block;
+		}
+	}
+}

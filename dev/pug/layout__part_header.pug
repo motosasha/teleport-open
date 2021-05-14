@@ -1,0 +1,32 @@
+.header
+	.grid
+		.grid__row
+			.grid__col
+				.header__top
+					svg.header__logo.svg
+						use(xlink:href='img/svgSprite.svg#logo')
+					a.header__phone.header__phone_mobile.header-phone(href='tel:88002000000')
+						.header-phone__descr Горячая линия
+						.header-phone__number 8 800 200-00-00
+					a.header__phone.header-phone(href='tel:88002000000')
+						.header-phone__descr Телефон горячей линии
+						.header-phone__number 8 800 200-00-00
+					.header__buttons
+						a.header__button.button(href='#') Регистрация
+						a.header__button.button.button_black(href='#') Вход
+				.header__bottom
+					.header__nav-scroll
+						.header__nav.header-nav
+							.header-nav__item
+								a.header-nav__text(href='#') О нас
+							.header-nav__item
+								a.header-nav__text(href='#') Продукты
+								a.header-nav__trigger
+									svg.header-nav__icon.svg
+										use(xlink:href='img/svgSprite.svg#icon__arrow_down')
+							.header-nav__item
+								a.header-nav__text(href='#') Агентам
+							.header-nav__item
+								a.header-nav__text(href='#') Партнёры
+							.header-nav__item
+								a.header-nav__text(href='#') Калькулятор

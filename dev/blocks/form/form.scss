@@ -1,0 +1,34 @@
+// В этом файле должны быть стили для БЭМ-блока form, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.form {
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		& + & {
+			margin-top: 24px;
+		}
+	}
+	&__item {
+		margin-bottom: 24px;
+		width: 100%;
+		&_half {
+			@media (min-width: $screen-md) {
+				width: calc(50% - (25px / 2));
+			}
+		}
+		&_loader {
+			align-items: flex-end;
+			display: flex;
+			img {
+				height: 40px;
+				width: 40px;
+			}
+		}
+	}
+	&__end-button {
+		margin: 24px 0 0 auto;
+	}
+}

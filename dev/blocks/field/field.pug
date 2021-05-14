@@ -1,0 +1,54 @@
+//- Все примеси в этом файле должны начинаться c имени блока (field)
+
+mixin field(label, placeholder, value, info, mod, isReq)
+	.field(class= mod)
+		label.field__inner
+			.field__label!= label
+			input.field__input.input(type='text', placeholder= placeholder, value= value, required=!!isReq)
+		.field__info!= info
+
+mixin field_phone(label, value, info, mod, isReq)
+	.field(class= mod)
+		label.field__inner
+			.field__label!= label
+			input.field__input.input(type='tel', placeholder='+7 (___) ___-__-__', value= value, required=!!isReq)
+		.field__info!= info
+
+mixin field_mail(label, placeholder, value, info, mod, isReq)
+	.field(class= mod)
+		label.field__inner
+			.field__label!= label
+			input.field__input.input(type='email', placeholder= placeholder, pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$', value= value, required=!!isReq)
+		.field__info!= info
+
+mixin field_date(label, placeholder, value, info, mod, isReq)
+	.field(class= mod)
+		label.field__inner
+			.field__label!= label
+			input.field__input.input(type='date', placeholder= placeholder, value= value, required=!!isReq)
+		.field__info!= info
+
+mixin field_select(label, mod, options)
+	.field(class= mod)
+		label.field__inner
+			.field__label!= label
+			select.select(required)
+				option Выберите значение
+				each option in options
+					option!= option
+
+mixin field_file(label, info, isReq)
+	.field
+		.field__inner
+			input.field__input.input.jfilestyle(type='file', data-text=label, data-placeholder='Выберите файл', required=!!isReq)
+		.field__info!= info
+
+mixin field_textarea(label, placeholder, info, mod, isCheckbox, checkboxLabel)
+	.field(class= mod)
+		label.field__inner
+			.field__label!= label
+			textarea.field__textarea.textarea(placeholder= placeholder)= value
+		if isCheckbox === true
+			+checkbox(true, true, checkboxLabel, 'field__textarea-checkbox')
+		.field__info!= info
+

@@ -1,0 +1,15 @@
+extends ../pug/layout_default.pug
+
+block pageMain
+	.grid
+		.grid__row
+			.grid__col
+		.grid__row
+			.grid__col
+				section.section
+					h1.page__heading Все партнёры
+					.partners-grid
+						- for (var i = 0; i < 15; ++i) {
+							.partners-grid__item
+								img.partners-grid__img(src='img/img__partner-logo.png', alt='Partner name')
+						- }

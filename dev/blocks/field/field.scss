@@ -1,0 +1,25 @@
+// В этом файле должны быть стили для БЭМ-блока field, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.field {
+	display: block;
+	width: 100%;
+	&__label {
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 115%;
+		margin-bottom: 8px;
+	}
+	&__input {}
+	&__info {
+		color: $red_01;
+		display: none;
+		font-size: 12px;
+		margin-top: 4px;
+	}
+	&__textarea-checkbox {
+		display: inline-flex;
+		margin-top: 8px;
+	}
+}

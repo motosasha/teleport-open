@@ -1,0 +1,84 @@
+// В этом файле должны быть стили для БЭМ-блока header, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header {
+	background: $monochrome_10;
+	box-shadow: 0 24px 48px rgba(23, 28, 50, 0.1), inset 0 -1px 0 $monochrome_06;
+	position: relative;
+	&__top {
+		align-items: center;
+		display: grid;
+		grid-gap: 12px;
+		grid-template-areas:
+			'logo phone'
+			'buttons buttons';
+		padding: 20px 0;
+		position: relative;
+		@media (min-width: $screen-md) {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		&::after {
+			background: $monochrome_06;
+			bottom: 0;
+			content: '';
+			height: 1px;
+			position: absolute;
+			width: 100%;
+			@media (min-width: $screen-sm) {
+				transform: translateX(-16px);
+				width: calc(100% + 32px);
+			}
+		}
+	}
+	&__bottom {
+		height: 56px;
+		margin: 0 -12.5px;
+		overflow: hidden;
+	}
+	&__logo {
+		grid-area: logo;
+		height: 32px;
+		width: 164px;
+		@media (min-width: $screen-md) {
+			height: 40px;
+			width: 206px;
+		}
+	}
+	&__phone {
+		display: none;
+		justify-self: end;
+		grid-area: phone;
+		transition: transform .25s ease;
+		@media (min-width: $screen-lg) {
+			display: block;
+			margin: 0 48px 0 auto;
+		}
+		&:hover {
+			transform: translateY(-1px);
+		}
+		&_mobile {
+			display: block;
+			@media (min-width: $screen-lg) {
+				display: none;
+			}
+		}
+	}
+	&__buttons {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-area: buttons;
+		grid-gap: 16px;
+	}
+	&__nav-scroll {
+		display: flex;
+		overflow: hidden;
+-webkit-overflow-scrolling: touch;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}
+	&__nav {}
+}

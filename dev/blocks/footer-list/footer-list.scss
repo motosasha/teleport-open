@@ -1,0 +1,26 @@
+// В этом файле должны быть стили для БЭМ-блока footer-list, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.footer-list {
+	display: grid;
+	grid-gap: 12px;
+	justify-items: start;
+	&__title {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 120%;
+		margin-bottom: 4px;
+	}
+	&__link {
+		color: $blue_01;
+		font-size: 15px;
+		font-weight: 500;
+		letter-spacing: 0.01em;
+		line-height: 107%;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

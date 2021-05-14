@@ -1,0 +1,68 @@
+// В этом файле должны быть стили для БЭМ-блока checkbox, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.checkbox {
+	align-items: center;
+	display: flex;
+	&__input {
+		display: none;
+	}
+	&__fake-input {
+		border: 2px solid $blue_01;
+		border-radius: 8px;
+		flex: 0 0 auto;
+		height: 24px;
+		margin-bottom: auto;
+		width: 24px;
+	}
+	&__input:disabled + &__fake-input {
+		background: $monochrome_06;
+	}
+	&__mark {
+		height: 8px;
+		left: 4px;
+		position: relative;
+		top: 3px;
+		transform: rotate(-45deg);
+		width: 16px;
+		&::before,
+		&::after {
+			background: $monochrome_10;
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&::before {
+			height: 0;
+			width: 3px;
+		}
+		&::after {
+			bottom: 0;
+			height: 3px;
+			width: 0;
+		}
+	}
+	&__input:checked + &__fake-input {
+		background: $blue_01;
+	}
+	&__input:checked + &__fake-input &__mark {
+		&::before {
+			height: 6px;
+			width: 3px;
+		}
+		&::after {
+			bottom: 0;
+			height: 3px;
+			width: 12px;
+		}
+	}
+	&__label {
+		font-size: 14px;
+		line-height: 125%;
+		user-select: none;
+	}
+	&__fake-input + &__label {
+		margin-left: 12px;
+	}
+}

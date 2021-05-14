@@ -1,0 +1,36 @@
+// В этом файле должны быть стили для БЭМ-блока partners-grid, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.partners-grid {
+	display: grid;
+	grid-gap: 16px;
+	@media (min-width: $screen-sm) {}
+	@media (min-width: $screen-md) {
+		grid-gap: 16px 25px;
+		grid-template-columns: 1fr 1fr;
+	}
+	@media (min-width: $screen-lg) {}
+	@media (min-width: $screen-xl) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	@media (min-width: $screen-xxl) {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	&__item {
+		background: $monochrome_10;
+		box-shadow: 0 56px 56px rgba(0, 0, 0, 0.04);
+		border-radius: 16px;
+		padding: 8px 16px;
+		@media (min-width: $screen-md) {
+			padding: 16px 24px;
+		}
+		@media (min-width: $screen-xl) {
+			padding: 20px 32px;
+		}
+	}
+	&__img {
+		display: block;
+		max-width: 100%;
+	}
+}

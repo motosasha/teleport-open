@@ -1,0 +1,25 @@
+// В этом файле должны быть стили для БЭМ-блока input, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.input {
+	appearance: none;
+	background: $monochrome_08;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	box-shadow: 0 0 20px rgba(56, 71, 109, 0.05);
+	color: $monochrome_02;
+	font-size: 14px;
+	height: 40px;
+	line-height: 115%;
+	outline: none;
+	padding: 11px 16px;
+	transition: border .125s ease-in-out;
+	width: 100%;
+	&::placeholder {
+		color: $monochrome_04;
+	}
+	&:focus {
+		border: 1px solid $blue_01;
+	}
+}
