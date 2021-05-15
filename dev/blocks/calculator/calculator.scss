@@ -1,0 +1,111 @@
+// В этом файле должны быть стили для БЭМ-блока calculator, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.calculator {
+	&__tabs {
+		display: flex;
+	}
+	&__tab-item {}
+	&__tab-radio {
+		display: none;
+	}
+	&__tab-fake {
+		align-items: center;
+		border-radius: 8px 8px 0 0;
+		cursor: pointer;
+		display: flex;
+		font-size: 16px;
+		font-weight: 500;
+		justify-content: center;
+		line-height: 100%;
+		text-align: center;
+		padding: 16px;
+		user-select: none;
+	}
+	&__tab-radio:checked + &__tab-fake {
+		background: $monochrome_10;
+	}
+	&__body {
+		background: $monochrome_10;
+		padding: 16px;
+		@media (min-width: $screen-lg) {
+			padding: 16px 16px 32px;
+		}
+	}
+	&__radios {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		@media (min-width: $screen-sm) {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.radio {
+			margin: 0 0 4px;
+			@media (min-width: $screen-sm) {
+				margin: 0 24px 4px 0;
+			}
+		}
+		.checkbox {
+			margin: 12px 0 0;
+			@media (min-width: $screen-lg) {
+				margin: 0 0 0 auto;
+			}
+		}
+	}
+	&__form {
+		align-items: end;
+		display: grid;
+		grid-gap: 8px;
+		margin: 24px 0 16px;
+		@media (min-width: $screen-sm) {
+			grid-gap: 20px;
+			grid-template-columns: 1fr 1fr;
+			margin: 32px 0 24px;
+		}
+		@media (min-width: $screen-lg) {
+			grid-gap: 20px;
+			grid-template-columns: 2fr 2fr 1fr;
+			margin: 32px 0 24px;
+		}
+		.button {
+			height: 40px;
+		}
+	}
+	&__row {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@media (min-width: $screen-lg) {
+			align-items: center;
+			flex-direction: row;
+		}
+	}
+	&__link {
+		color: $red_01;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 115%;
+		text-decoration-line: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	&__date {
+		color: $monochrome_03;
+		font-size: 14px;
+		line-height: 115%;
+		margin-top: 8px;
+		@media (min-width: $screen-lg) {
+			margin: 0;
+			text-align: right;
+		}
+	}
+	&__table {
+		margin-top: 24px;
+		@media (min-width: $screen-lg) {
+			margin-top: 56px;
+		}
+	}
+}

@@ -35,4 +35,16 @@
 	&_black {
 		background: $monochrome_01;
 	}
+	&_blue {
+		background: $blue_01;
+		&:hover {
+			background: $blue_03;
+		}
+	}
+	&_green {
+		background: $green_01;
+		&:hover {
+			background: $green_03;
+		}
+	}
 }

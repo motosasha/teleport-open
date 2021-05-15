@@ -7,11 +7,18 @@ mixin field(label, placeholder, value, info, mod, isReq)
 			input.field__input.input(type='text', placeholder= placeholder, value= value, required=!!isReq)
 		.field__info!= info
 
+mixin field_sum(label, placeholder, value, info, mod, isReq)
+	.field(class= mod)
+		label.field__inner
+			.field__label!= label
+			input.field__input.input.input_sum(type='text', placeholder= placeholder, value= value, required=!!isReq)
+		.field__info!= info
+
 mixin field_phone(label, value, info, mod, isReq)
 	.field(class= mod)
 		label.field__inner
 			.field__label!= label
-			input.field__input.input(type='tel', placeholder='+7 (___) ___-__-__', value= value, required=!!isReq)
+			input.field__input.input.input_phone(type='text', placeholder='+7 (___) ___-__-__', value= value, required=!!isReq)
 		.field__info!= info
 
 mixin field_mail(label, placeholder, value, info, mod, isReq)
@@ -25,7 +32,13 @@ mixin field_date(label, placeholder, value, info, mod, isReq)
 	.field(class= mod)
 		label.field__inner
 			.field__label!= label
-			input.field__input.input(type='date', placeholder= placeholder, value= value, required=!!isReq)
+			input.field__input.input.input_date(type='text', placeholder= placeholder, value= value, required=!!isReq)
+		.field__info!= info
+mixin field_date_period(label, info, mod)
+	.field(class= mod)
+		label.field__inner
+			.field__label!= label
+			input.field__input.input.input_date_period(type='text', placeholder='Выберите период', required)
 		.field__info!= info
 
 mixin field_select(label, mod, options)

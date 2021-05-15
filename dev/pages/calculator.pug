@@ -1,0 +1,127 @@
+extends ../pug/layout_default.pug
+
+block pageMain
+	.grid
+		.grid__row
+			.grid__col
+		.grid__row
+			.grid__col.grid__col_xl_10.grid__col-offset_xl_1
+				section.section
+					h1.page__heading Расчёт стоимости банковской гарантии
+
+					form.calculator
+						.calculator__tabs
+							label.calculator__tab-item
+								input.calculator__tab-radio(type='radio', name='calcTab', value='0', checked)
+								.calculator__tab-fake 44-ФЗ
+							label.calculator__tab-item
+								input.calculator__tab-radio(type='radio', name='calcTab', value='1')
+								.calculator__tab-fake 223-ФЗ
+							label.calculator__tab-item
+								input.calculator__tab-radio(type='radio', name='calcTab', value='2')
+								.calculator__tab-fake ПП 615
+						.calculator__body
+							.calculator__row
+								.calculator__radios
+									label.radio
+										input.radio__input#calcExec(type="radio", name="o", checked)
+										.radio__fake-input
+											.radio__mark
+										.radio__label Исполнение
+									label.radio
+										input.radio__input#calcPart(type="radio", name="o")
+										.radio__fake-input
+											.radio__mark
+										.radio__label Участие
+									label.radio
+										input.radio__input#calcGO(type="radio", name="o",)
+										.radio__fake-input
+											.radio__mark
+										.radio__label Гарантийные обязательства
+									label.radio
+										input.radio__input#calcVA(type="radio", name="o", disabled)
+										.radio__fake-input
+											.radio__mark
+										.radio__label Возврат аванса
+									+checkbox(false, true, 'Наличие аванса', mod)
+							.calculator__form
+								+field_sum('Сумма (₽)', placeholder, value, info, mod, true)
+								+field_date_period('Срок', info, mod)
+								button.button.button_blue Рассчитать
+							.calculator__row
+								a.calculator__link(href='#', target='_blank') Проверить необходимость предоставления обеспечения
+								.calculator__date Тарифы по состоянию на #[span 32.03.2021]
+							.calculator__table
+								table.calculator-table
+									thead
+										tr
+											th
+												.calculator-table__th-label Банк
+											th(data-sort="int")
+												.calculator-table__th-label Базовая, ₽
+											th(data-sort="int")
+												.calculator-table__th-label Со скидкой, ₽
+											th(data-sort="int")
+												.calculator-table__th-label Специальная, ₽
+											th
+									tbody
+										tr
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary Реалист
+													.calculator-table__secondary B(RU)
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary 200 000
+													.calculator-table__secondary 2.62% годовых
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary 140 000
+													.calculator-table__secondary 1.83% годовых
+													.calculator-table__mark -30%
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary 126 000
+													.calculator-table__secondary 1.65% годовых
+													.calculator-table__mark -10%
+											td
+												a.button.button_green(href='#') Получить
+										tr
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary Левобережный
+													.calculator-table__secondary ruA-
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary 229 315
+													.calculator-table__secondary 3.00% годовых
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary 152 877
+													.calculator-table__secondary 2.00% годовых
+													.calculator-table__mark -33%
+											td(data-sort-value="0")
+												.calculator-table__td-inner
+													.calculator-table__primary —
+											td
+										tr
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary Промсвязьбанк
+													.calculator-table__secondary AA(RU), ruAA
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary 29 315
+													.calculator-table__secondary 3.00% годовых
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary 160 521
+													.calculator-table__secondary 2.10% годовых
+													.calculator-table__mark -30%
+											td
+												.calculator-table__td-inner
+													.calculator-table__primary 144 468
+													.calculator-table__secondary 1.89% годовых
+													.calculator-table__mark -10%
+											td
+												a.button.button_green(href='#') Получить

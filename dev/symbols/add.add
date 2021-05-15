@@ -1,2 +1,8 @@
 <view id="icon__arrow_down-view" viewBox="0 0 24 24" />
-<use xlink:href="#icon__arrow_down" style="fill:black" width="24" height="24" x="0" y="0" id="arrow_down"></use>
+<use xlink:href="#icon__arrow_down" style="fill:#181c32" width="24" height="24" x="0" y="0" id="arrow_down"></use>
+
+<view id="icon__calendar-view" viewBox="0 24 24 24" />
+<use xlink:href="#icon__calendar" style="fill:#181c32" width="24" height="24" x="0" y="24" id="calendar"></use>
+
+<view id="icon__arrow_down_table-view" viewBox="0 48 16 16" />
+<use xlink:href="#icon__arrow_down_table" style="fill:#3e97ff" width="16" height="16" x="0" y="48" id="arrow_down_table"></use>

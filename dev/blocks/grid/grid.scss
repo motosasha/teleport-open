@@ -104,6 +104,12 @@
 		&_xl_8 {
 			@include col(xl, 8, $grid-columns, 25px);
 		}
+		&_xl_10 {
+			@include col(xl, 10, $grid-columns, 25px);
+		}
+		&-offset_xl_1 {
+			@include col-offset(xl, 1, $grid-columns);
+		}
 		&-offset_xl_2 {
 			@include col-offset(xl, 2, $grid-columns);
 		}
