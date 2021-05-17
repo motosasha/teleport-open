@@ -1,0 +1,178 @@
+extends ../pug/layout_default.pug
+
+block variables
+	- var isMainPage = true
+
+block pageMain
+	section.hero
+		.hero__inner
+			.hero__slider.hero-slider.swiper-container
+				.hero-slider__inner.swiper-wrapper
+					.hero-slider__slide.swiper-slide
+						.grid
+							.grid__row
+								.grid__col.grid__col_sm_8.grid__col_md_6.grid__col_xl_5
+									.hero-slider__info
+										.hero-slider__tag #ВремяДеньги
+										h2.hero-slider__title Все банки одним кликом
+										p.hero-slider__descr Инновационный портал для получения банковской гарантии
+										a.button.button_large(data-hystmodal='#registration') Регистрация
+								.grid__col.grid__col_sm_4.grid__col_md_6.grid__col_xl_6.grid__col-offset_xl_1
+									img.hero-slider__img(src='img/img__hero_01.png', srcset='img/img__hero_01.png, img/img__hero_01_x2.png 2x', alt='')
+					.hero-slider__slide.swiper-slide
+						.grid
+							.grid__row
+								.grid__col.grid__col_sm_8.grid__col_md_6.grid__col_xl_5
+									.hero-slider__info
+										h2.hero-slider__title Банковская гарантия
+										p.hero-slider__descr По 44-ФЗ, 223-ФЗ, 185-ФЗ (615ПП)
+											br
+											| Коммерческие гарантии
+										a.button.button_large(href='calculator.html') Рассчитать стоимость
+								.grid__col.grid__col_sm_4.grid__col_md_6.grid__col_xl_6.grid__col-offset_xl_1
+									img.hero-slider__img(src='img/img__hero_02.png', srcset='img/img__hero_02.png, img/img__hero_02_x2.png 2x', alt='')
+					.hero-slider__slide.swiper-slide
+						.grid
+							.grid__row
+								.grid__col.grid__col_sm_8.grid__col_md_6.grid__col_xl_5
+									.hero-slider__info
+										h2.hero-slider__title Наши партнеры
+										p.hero-slider__descr Инновационный портал для получения банковской гарантии
+										a.button.button_large(href='partners.html') Подробнее
+								.grid__col.grid__col_sm_4.grid__col_md_6.grid__col_xl_6.grid__col-offset_xl_1
+									img.hero-slider__img(src='img/img__hero_03.png', srcset='img/img__hero_03.png, img/img__hero_03_x2.png 2x', alt='')
+				.hero-slider__pagination.swiper-pagination
+			.hero__circle
+	section.section.section_bg_white.about
+		.section__anchor#about
+		.grid
+			.grid__row
+				.grid__col.grid__col_lg_6.grid__col_xl_5
+					.section__header
+						h2.page__heading(data-aos='fade-up') О нас
+					p.page__text(data-aos='fade-up') #[strong Телепорт] — это оптимизированная айти-платформа, где каждый участник государственных закупок в режиме онлайн сможет получить необходимый банковский продукт для исполнения контракта.
+					p.page__text(data-aos='fade-up', data-aos-delay='125') Уникальность #[strong Телепорта] в том, что одним кликом вы получаете решения от всех банков-партнеров. Вам больше не потребуется тратить ресурсы на заведение и подписание заявок во все банки.
+					p.page__text(data-aos='fade-up', data-aos-delay='250') Цель айти-платформы в том, чтобы вы получили максимальный результат с минимальными расходами.
+				.grid__col.grid__col_lg_6.grid__col_xl_7
+					.about__inner(data-aos='fade-left' data-aos-anchor-placement="bottom-bottom")
+						picture
+							source(media='(max-width: 1199px)' srcset='img/img__about.png, img/img__about_x2.png 2x')
+							source(media='(min-width: 1200px)' srcset='img/img__about_x2.png')
+							img.about__img(src='img/img__about.png', alt='')
+	section.section.partners
+		.section__anchor#partners
+		.grid
+			.grid__row
+				.grid__col(data-aos='fade')
+					.section__header
+						h2.page__heading Наши партнёры
+						a.button.button_blue.section__button(href='partners.html') Все партнёры
+					.swiper-container.partners__slider.partners-slider
+						.swiper-wrapper.partners-slider__inner
+							.partners-slider__slide.swiper-slide
+								img.partners-slider__img(src='img/img__partner-logo.png', alt='Partner name')
+							.partners-slider__slide.swiper-slide
+								img.partners-slider__img(src='img/img__partner-logo.png', alt='Partner name')
+							.partners-slider__slide.swiper-slide
+								img.partners-slider__img(src='img/img__partner-logo.png', alt='Partner name')
+						.partners-slider__button-prev.swiper-button-prev
+							svg.partners-slider__icon.svg
+								use(xlink:href='img/svgSprite.svg#icon__shevron_left')
+						.partners-slider__button-next.swiper-button-next
+							svg.partners-slider__icon.svg
+								use(xlink:href='img/svgSprite.svg#icon__shevron_right')
+					.button-block
+						.button-block__text Приглашаем банки
+							br
+							| к сотрудничеству
+						a.button.button_round.button-block__button(data-hystmodal='#partnership') Стать партнёром
+	section.section.section_bg_white.production
+		.section__anchor#production
+		.grid
+			.grid__row
+				.grid__col
+					.section__header
+						h2.page__heading Чем мы будем Вам полезны
+					.production__grid.production-grid
+						a.production-grid__tile(data-hystmodal='#bg', data-aos='fade-up')
+							.production-grid__item Банковская гарантия
+							.production-grid__item Коммерческие гарантии
+							.production-grid__item Гарантии
+								.production-grid__secondary по 44-ФЗ, 223-ФЗ, 185-ФЗ (615-ПП)
+						a.production-grid__tile(data-hystmodal='#credit', data-aos='fade-up', data-aos-delay='250')
+							.production-grid__item Кредит на исполнение контракта
+								.production-grid__secondary по 44-ФЗ, 223-ФЗ
+						.production-grid__tile(data-aos='fade-up', data-aos-delay='500')
+							// a(data-hystmodal='#account') 321
+							.production-grid__item Расчётный счет
+	section.section.steps
+		.grid
+			.grid__row
+				.grid__col
+					.section__header
+						h2.page__heading 3 шага к успеху
+						a.button.button_blue.section__button(href='calculator.html') Рассчитать стоимость
+					.steps__grid.steps-grid
+						.steps-grid__tile(data-aos='fade-up')
+							.steps-grid__num 1
+							.steps-grid__text #[strong Создайте заявку] в личном кабинете и подпишите документы ЭЦП
+						.steps-grid__tile(data-aos='fade-up', data-aos-delay='250')
+							.steps-grid__num 2
+							.steps-grid__text Банки рассмотрят вашу заявку и #[strong ответят в течении 15 минут]
+						.steps-grid__tile(data-aos='fade-up', data-aos-delay='500')
+							.steps-grid__num 3
+							.steps-grid__text #[strong Поздравляем], вы получили самую выгодную банковскую гарантию!
+					a.steps__button.button.button_round(data-hystmodal='#request') Оставить заявку
+	section.section.section_bg_white.agent
+		.section__anchor#agent
+		.grid
+			.grid__row
+				.grid__col.grid__col_xl_10.grid__col-offset_xl_1
+					.section__header
+						h2.page__heading Агентам
+					.agent__grid.agent-grid
+						.agent-grid__tile(data-aos='fade-right')
+							h3.agent-grid__title Быстро
+							.agent-grid__text Наш сервис позволяет завести и подписать заявку для всех банков-партнеров. Одним действием вы получаете лучшие предложения. Минимальный расход времени — максимальный результат! Помните, #[span #ВремяДеньги]!
+						.agent-grid__tile(data-aos='fade-left', data-aos-delay='250')
+							h3.agent-grid__title Выгодно
+							.agent-grid__text При работе с айти-платформой вы получаете лучшие предложения от банков-партнеров по выгодной для вас цене. Вам останется самое сложное – выбрать лучшее из лучших!
+						.agent-grid__tile(data-aos='fade-right', data-aos-delay='500')
+							h3.agent-grid__title Удобно
+							.agent-grid__text Через личный кабинет в режиме онлайн вы всегда видите актуальную информацию. Работа с порталом сопровождается личным куратором, который поможет вам на каждом этапе сделки. С вас документы – от нас решение!
+						.agent-grid__tile(data-aos='fade-left', data-aos-delay='750')
+							h3.agent-grid__title Надежно
+							.agent-grid__text Все наши банки-партнеры входят в перечень Минфина. Данные пользователей айти-платформы надежно защищены. Безопасность данных клиентов обеспечивается с помощью системы идентификации. Для документов используются электронные подписи клиентов и банков. С нами вы в надежных руках!
+					a.agent__button.button.button_round(data-hystmodal='#registration') Регистрация
+	section.section.last
+		.grid
+			.grid__row
+				.grid__col.grid__col_xl_10.grid__col-offset_xl_1(data-aos='fade')
+					.section__header
+						h2.page__heading Вам больше #[span не] придётся
+					.last__grid
+						.last__item
+							svg.last__icon.svg
+								use(xlink:href='img/svgSprite.svg#icon__no_web')
+							.last__text Изучать сайты банков
+						.last__item
+							svg.last__icon.svg
+								use(xlink:href='img/svgSprite.svg#icon__no_form')
+							.last__text Заполнять однотипные анкеты
+						.last__item
+							svg.last__icon.svg
+								use(xlink:href='img/svgSprite.svg#icon__no_phone')
+							.last__text Тратить время на телефонные разговоры
+						.last__item
+							svg.last__icon.svg
+								use(xlink:href='img/svgSprite.svg#icon__no_compare')
+							.last__text Самому сравнивать предложения
+						.last__item
+							svg.last__icon.svg
+								use(xlink:href='img/svgSprite.svg#icon__no_mail')
+							.last__text Плодить переписки, теряя письма
+					.button-block
+						.button-block__text Экономь время и деньги
+							br
+							| вместе с нами!
+						a.button.button_round.button-block__button(data-hystmodal='#registration') Регистрация

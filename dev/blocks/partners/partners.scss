@@ -1,0 +1,12 @@
+// В этом файле должны быть стили для БЭМ-блока partners, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.partners {
+	&__slider {
+		margin-bottom: 32px;
+		@media (min-width: $screen-sm) {
+			margin-bottom: 64px;
+		}
+	}
+}

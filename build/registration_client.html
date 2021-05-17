@@ -23,7 +23,7 @@
 		<meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 		<meta name="theme-color" content="#ffffff">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 		<title>Телепорт — Все банки одним кликом</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
@@ -37,27 +37,29 @@
 					<div class="grid">
 						<div class="grid__row">
 							<div class="grid__col">
-								<div class="header__top"><svg class="header__logo svg">
-										<use xlink:href="img/svgSprite.svg#logo"></use>
-									</svg><a class="header__phone header__phone_mobile header-phone" href="tel:88002000000">
+								<div class="header__top"><a href="/"><svg class="header__logo svg">
+											<use xlink:href="img/svgSprite.svg#logo"></use>
+										</svg></a><a class="header__phone header__phone_mobile header-phone" href="tel:88002000000">
 										<div class="header-phone__descr">Горячая линия</div>
 										<div class="header-phone__number">8 800 200-00-00</div>
 									</a><a class="header__phone header-phone" href="tel:88002000000">
 										<div class="header-phone__descr">Телефон горячей линии</div>
 										<div class="header-phone__number">8 800 200-00-00</div>
 									</a>
-									<div class="header__buttons"><a class="header__button button" href="#">Регистрация</a><a class="header__button button button_black" href="#">Вход</a></div>
+									<div class="header__buttons"><a class="header__button button" data-hystmodal="#registration">Регистрация</a><a class="header__button button button_black" data-hystmodal="#login">Вход</a></div>
 								</div>
 								<div class="header__bottom">
 									<div class="header__nav-scroll">
 										<div class="header__nav header-nav">
-											<div class="header-nav__item"><a class="header-nav__text" href="#">О нас</a></div>
-											<div class="header-nav__item"><a class="header-nav__text" href="#">Продукты</a><a class="header-nav__trigger"><svg class="header-nav__icon svg">
+											<div class="header-nav__item"><a class="header-nav__text" href="/index.html#about">О нас</a></div>
+											<div class="header-nav__item"><a class="header-nav__text" href="index.html#production">Продукты</a><a class="header-nav__trigger"><svg class="header-nav__icon svg">
 														<use xlink:href="img/svgSprite.svg#icon__arrow_down"></use>
-													</svg></a></div>
-											<div class="header-nav__item"><a class="header-nav__text" href="#">Агентам</a></div>
-											<div class="header-nav__item"><a class="header-nav__text" href="#">Партнёры</a></div>
-											<div class="header-nav__item"><a class="header-nav__text" href="#">Калькулятор</a></div>
+													</svg></a>
+												<div class="header-nav__drop"><a class="header-nav__text" data-hystmodal="#bg">Банковская гарантия</a><a class="header-nav__text" data-hystmodal="#credit">Кредит на исполнение контракта</a><a class="header-nav__text" href="#">Расчетный счёт</a></div>
+											</div>
+											<div class="header-nav__item"><a class="header-nav__text" href="index.html#agent">Агентам</a></div>
+											<div class="header-nav__item"><a class="header-nav__text" href="index.html#partners">Партнёры</a></div>
+											<div class="header-nav__item"><a class="header-nav__text" href="calculator.html">Калькулятор</a></div>
 										</div>
 									</div>
 								</div>
@@ -74,7 +76,9 @@
 					<div class="grid__row">
 						<div class="grid__col grid__col_md_8 grid__col-offset_md_2 grid__col_lg_6 grid__col-offset_lg_3 grid__col_xxl_4 grid__col-offset_xxl_4">
 							<section class="section">
-								<h1 class="page__heading page__heading_tac">Регистрация клиента</h1>
+								<div class="section__header">
+									<h1 class="page__heading page__heading_tac">Регистрация клиента</h1>
+								</div>
 								<div class="tabs">
 									<ul class="tabs__caption">
 										<li class="tabs__item tabs__item_active">Без сертификата ЭЦП</li>
@@ -201,6 +205,388 @@
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div><a class="page__to-top"><svg class="page__icon svg">
+					<use xlink:href="img/svgSprite.svg#icon__arrow_down"></use>
+				</svg></a>
+		</div>
+		<div class="hystmodal" id="registration" aria-hidden="true">
+			<div class="hystmodal__wrap">
+				<div class="hystmodal__window" role="dialog" aria-modal="true">
+					<div class="popup">
+						<div class="popup__header">
+							<h2 class="popup__heading">Выберите способ регистрации</h2><svg class="popup__close svg" data-hystclose="">
+								<use xlink:href="img/svgSprite.svg#icon__cross"></use>
+							</svg>
+						</div>
+						<div class="popup__body">
+							<div class="modal-form">
+								<div class="modal-form__tiles"><a class="modal-form__tile" href="registration_agent.html"><svg class="modal-form__tile-icon svg">
+											<use xlink:href="img/svgSprite.svg#icon__agent"></use>
+										</svg>
+										<div class="modal-form__tile-title">Агент</div>
+									</a><a class="modal-form__tile" href="registration_client.html"><svg class="modal-form__tile-icon svg">
+											<use xlink:href="img/svgSprite.svg#icon__client"></use>
+										</svg>
+										<div class="modal-form__tile-title">Клиент</div>
+									</a></div>
+								<div class="modal-form__end">Уже зарегистрированы? <a class="link" data-hystmodal="#login">Войти</a></div>
+							</div>
+						</div>
+						<div class="popup__footer">
+							<div class="popup__footer-line">Возникли проблемы с регистрацией или входом?</div>
+							<div class="popup__footer-line">Свяжитесь с нами по телефону <a class="link" href="tel:89501234567">8 (950) 123-45-67</a></div>
+							<div class="popup__footer-line">Служба технической поддержки: <a class="link" href="mailto:support@teleport.ru">support@teleport.ru</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hystmodal" id="login" aria-hidden="true">
+			<div class="hystmodal__wrap">
+				<div class="hystmodal__window" role="dialog" aria-modal="true">
+					<div class="popup">
+						<div class="popup__header">
+							<h2 class="popup__heading">Вход в систему</h2><svg class="popup__close svg" data-hystclose="">
+								<use xlink:href="img/svgSprite.svg#icon__cross"></use>
+							</svg>
+						</div>
+						<div class="popup__body">
+							<div class="modal-form">
+								<div class="tabs">
+									<ul class="tabs__caption">
+										<li class="tabs__item tabs__item_active">По логину и паролю</li>
+										<li class="tabs__item">По сертификату ЭЦП</li>
+									</ul>
+									<div class="tabs__content">
+										<div class="tabs__tab tabs__tab_active">
+											<form class="form">
+												<div class="form__row">
+													<div class="form__item">
+														<div class="field"><label class="field__inner">
+																<div class="field__label">Логин</div><input class="field__input input" type="text" required="required" />
+															</label>
+															<div class="field__info"></div>
+														</div>
+													</div>
+													<div class="form__item">
+														<div class="field"><label class="field__inner">
+																<div class="field__row">
+																	<div class="field__label">Пароль</div><a class="field__forgot" data-hystmodal="#forgot-pass">Забыли пароль?</a>
+																</div><input class="field__input input" type="password" required="required" />
+															</label>
+															<div class="field__info"></div>
+														</div>
+													</div><button class="button button_blue form__end-button">Войти</button>
+												</div>
+											</form>
+										</div>
+										<div class="tabs__tab">
+											<div class="cripto">
+												<div class="cripto__warning"><svg class="cripto__icon svg">
+														<use xlink:href="img/svgSprite.svg#icon__info"></use>
+													</svg>
+													<div class="cripto__message">У вас не установлен или не включён плагин КриптоПро ЭЦП Browser plug-in для работы с сервисом</div>
+												</div>
+												<div class="cripto__inner">
+													<div class="cripto__text">Для продолжения работы вам необходимо:</div>
+													<ol class="cripto__list">
+														<li class="cripto__li">Сохранить последнюю версию установщика</li>
+														<li class="cripto__li">Запустить установочны файл <a class="link" href="#" download>Teleport.Installer</a> и выполнить действия по установке</li>
+														<li class="cripto__li">Включить расширение <strong>CryproPro CAsES Browser Plugin</strong></li>
+														<li class="cripto__li">После установки и включения обновить страницу</li>
+													</ol>
+												</div>
+											</div><br><br><br>
+											<div class="cripto">
+												<div class="cripto__enter">
+													<div class="cripto__title">У вас установлено и включено расширение <strong>CryproPro CAsES Browser Plugin</strong>, вы можете войти</div><button class="button">Войти</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="modal-form__end">Ещё не зарегистрированы? <a class="link" data-hystmodal="#registration">Регистрация</a></div>
+							</div>
+						</div>
+						<div class="popup__footer">
+							<div class="popup__footer-line">Возникли проблемы с регистрацией или входом?</div>
+							<div class="popup__footer-line">Свяжитесь с нами по телефону <a class="link" href="tel:89501234567">8 (950) 123-45-67</a></div>
+							<div class="popup__footer-line">Служба технической поддержки: <a class="link" href="mailto:support@teleport.ru">support@teleport.ru</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hystmodal" id="forgot-pass" aria-hidden="true">
+			<div class="hystmodal__wrap">
+				<div class="hystmodal__window" role="dialog" aria-modal="true">
+					<div class="popup">
+						<div class="popup__header">
+							<h2 class="popup__heading">Восстановление пароля</h2><svg class="popup__close svg" data-hystclose="">
+								<use xlink:href="img/svgSprite.svg#icon__cross"></use>
+							</svg>
+						</div>
+						<div class="popup__body">
+							<div class="modal-form">
+								<form class="form">
+									<div class="form__row">
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Электронная почта</div><input class="field__input input" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div><button class="button button_blue form__end-button">Войти</button>
+									</div>
+								</form>
+								<div class="modal-form__end">Я помню пароль! <a class="link" data-hystmodal="#login">Войти</a></div>
+							</div>
+						</div>
+						<div class="popup__footer">
+							<div class="popup__footer-line">Возникли проблемы с регистрацией или входом?</div>
+							<div class="popup__footer-line">Свяжитесь с нами по телефону <a class="link" href="tel:89501234567">8 (950) 123-45-67</a></div>
+							<div class="popup__footer-line">Служба технической поддержки: <a class="link" href="mailto:support@teleport.ru">support@teleport.ru</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hystmodal" id="partnership" aria-hidden="true">
+			<div class="hystmodal__wrap">
+				<div class="hystmodal__window" role="dialog" aria-modal="true">
+					<form class="popup">
+						<div class="popup__header">
+							<h2 class="popup__heading">Стать партнёром</h2><svg class="popup__close svg" data-hystclose="">
+								<use xlink:href="img/svgSprite.svg#icon__cross"></use>
+							</svg>
+						</div>
+						<div class="popup__body">
+							<div class="modal-form">
+								<div class="form">
+									<div class="form__row">
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">ИНН партнёра</div><input class="field__input input" type="text" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Наименование партнёра</div><input class="field__input input" type="text" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">ФИО контактного лица</div><input class="field__input input" type="text" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Электронная почта</div><input class="field__input input" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+									</div>
+									<div class="form__row form__row_2-1">
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Телефон</div><input class="field__input input input_phone" type="text" placeholder="+7 (___) ___-__-__" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">доб.</div><input class="field__input input" type="text" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+									</div>
+									<div class="form__row form__row_2-1">
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Введите код с картинки</div><input class="field__input input" type="text" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+										<div class="form__item">captcha</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="popup__footer popup__footer_modal"><button class="button">Отправить запрос</button></div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="hystmodal" id="request" aria-hidden="true">
+			<div class="hystmodal__wrap">
+				<div class="hystmodal__window" role="dialog" aria-modal="true">
+					<form class="popup">
+						<div class="popup__header">
+							<h2 class="popup__heading">Оставить заявку</h2><svg class="popup__close svg" data-hystclose="">
+								<use xlink:href="img/svgSprite.svg#icon__cross"></use>
+							</svg>
+						</div>
+						<div class="popup__body">
+							<div class="modal-form">
+								<div class="form">
+									<div class="form__row">
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Как к вам обращаться</div><input class="field__input input" type="text" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Телефон</div><input class="field__input input input_phone" type="text" placeholder="+7 (___) ___-__-__" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="popup__footer popup__footer_modal"><button class="button">Отправить заявку</button></div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="hystmodal" id="bg" aria-hidden="true">
+			<div class="hystmodal__wrap">
+				<div class="hystmodal__window" role="dialog" aria-modal="true">
+					<div class="popup popup_wide">
+						<div class="popup__header">
+							<h2 class="popup__heading">Банковская гарантия</h2><svg class="popup__close svg" data-hystclose="">
+								<use xlink:href="img/svgSprite.svg#icon__cross"></use>
+							</svg>
+						</div>
+						<div class="popup__body">
+							<div class="production-popup">
+								<div class="production-popup__row">
+									<div class="production-popup__col production-popup__col_half">
+										<div class="production-popup__text"><strong>Банковская гарантия</strong> — это один из наиболее удобных и надежных способов финансового обеспечения участия и исполнения государственного контракта. При использовании банковской гарантии вам не нужно замораживать собственные средства, вы лишь оплачиваете минимальную комиссию в банк за её выпуск.</div>
+										<div class="production-popup__text">Получить банковскую гарантию через Телепорт — быстро и выгодно. В онлайн режиме вы одновременно подаете заявки во все банки-партнеры и далее выбираете выгодное предложение для вас.</div>
+									</div>
+									<div class="production-popup__col production-popup__col_half">
+										<div class="production-popup__bubble">
+											<h3 class="production-popup__title">Гарантии:</h3>
+											<ul class="production-popup__list">
+												<li class="production-popup__li">на обеспечение заявки на участие в закупке</li>
+												<li class="production-popup__li">на обеспечение исполнение контракта</li>
+												<li class="production-popup__li">на обеспечение возврата авансового платежа</li>
+												<li class="production-popup__li">на обеспечение гарантийных обязательств коммерческие гарантии</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="production-popup__row">
+									<div class="production-popup__col">
+										<h3 class="production-popup__title">Параметры:</h3>
+										<div class="production-popup__grid">
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text">от <strong>0 ₽</strong><br>до <strong>1 млрд. ₽</strong></div>
+											</div>
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text">Максимальный срок<br>на исполнение — <strong>7 лет</strong><br>на гарантийные обязательства — <strong>10 лет</strong></div>
+											</div>
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text">Все регионы, в том числе <strong>Крым</strong> и <strong>Кавказ</strong></div>
+											</div>
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text">Выпуск гарантии от заведения до выдачи <strong>в течение 2 часов</strong></div>
+											</div>
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text"><strong>Персональный менеджер</strong></div>
+											</div>
+										</div>
+									</div>
+								</div><small class="production-popup__small">Выдаваемое обеспечение соответствует требованиям 44-ФЗ и включено в единый реестр банковских гарантий.</small>
+							</div>
+						</div>
+						<div class="popup__footer popup__footer_modal"><a class="button button_blue" href="calculator.html">Рассчитать стоимость</a><a class="button" data-hystmodal="#request">Оставить заявку</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hystmodal" id="credit" aria-hidden="true">
+			<div class="hystmodal__wrap">
+				<div class="hystmodal__window" role="dialog" aria-modal="true">
+					<div class="popup popup_wide">
+						<div class="popup__header">
+							<h2 class="popup__heading">Кредит на исполнение контракта</h2><svg class="popup__close svg" data-hystclose="">
+								<use xlink:href="img/svgSprite.svg#icon__cross"></use>
+							</svg>
+						</div>
+						<div class="popup__body">
+							<div class="production-popup">
+								<div class="production-popup__row">
+									<div class="production-popup__col production-popup__col_3-4">
+										<div class="production-popup__text"><strong>Кредит на исполнение контракта</strong> — это кредит для пополнения оборотных средств в целях исполнения государственных контрактов.</div>
+										<div class="production-popup__text">Кредит погашается за счёт средств, полученных от контрагента по мере исполнения контракта.</div>
+									</div>
+								</div>
+								<div class="production-popup__row">
+									<div class="production-popup__col">
+										<h3 class="production-popup__title">Условия предоставления:</h3>
+										<div class="production-popup__grid">
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text">От <strong>10 %</strong> годовых</div>
+											</div>
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text">Сумма — <strong>от 30 % до 70 %</strong> от суммы контракта</div>
+											</div>
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text">Срок рассмотрения <strong>от 1 дня</strong></div>
+											</div>
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text">Максимальная сумма по кредиту — <strong>50 млн. ₽</strong></div>
+											</div>
+											<div class="production-popup__grid-item">
+												<div class="production-popup__grid-text">Максимальный срок кредита — <strong>до 36 месяцев</strong></div>
+											</div>
+										</div>
+									</div>
+								</div><small class="production-popup__small">Выдаваемое обеспечение соответствует требованиям 44-ФЗ и включено в единый реестр банковских гарантий.</small>
+							</div>
+						</div>
+						<div class="popup__footer popup__footer_modal"><a class="button" data-hystmodal="#request">Оставить заявку</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hystmodal" id="account" aria-hidden="true">
+			<div class="hystmodal__wrap">
+				<div class="hystmodal__window" role="dialog" aria-modal="true">
+					<div class="popup popup_wide">
+						<div class="popup__header">
+							<h2 class="popup__heading">Расчётный счет</h2><svg class="popup__close svg" data-hystclose="">
+								<use xlink:href="img/svgSprite.svg#icon__cross"></use>
+							</svg>
+						</div>
+						<div class="popup__body">
+							<div class="production-popup">
+								<div class="production-popup__row">
+									<div class="production-popup__col">
+										<div class="production-popup__text">Расчётный счет</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="popup__footer popup__footer_modal"><a class="button" data-hystmodal="#request">Оставить заявку</a></div>
 					</div>
 				</div>
 			</div>

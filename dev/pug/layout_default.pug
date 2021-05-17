@@ -1,4 +1,7 @@
 //- Стандартный шаблон страницы
+block variables
+	- var isMainPage = false
+
 - var isDeploy = false
 
 if isDeploy === true
@@ -37,7 +40,7 @@ html(class='no-js', lang='ru-RU')
 		meta(name="theme-color", content="#ffffff")
 
 		link(rel="preconnect" href="https://fonts.gstatic.com")
-		link(href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet")
 
 		block meta
 			title Телепорт — Все банки одним кликом
@@ -58,6 +61,248 @@ html(class='no-js', lang='ru-RU')
 					.fake-content fake-content
 			.page__footer
 				include layout__part_footer.pug
+
+			a.page__to-top
+				svg.page__icon.svg
+					use(xlink:href='img/svgSprite.svg#icon__arrow_down')
+
+		#registration.hystmodal(aria-hidden='true')
+			.hystmodal__wrap
+				.hystmodal__window(role='dialog' aria-modal='true')
+					.popup
+						.popup__header
+							h2.popup__heading Выберите способ регистрации
+							svg.popup__close.svg(data-hystclose='')
+								use(xlink:href='img/svgSprite.svg#icon__cross')
+						.popup__body
+							.modal-form
+								.modal-form__tiles
+									a.modal-form__tile(href='registration_agent.html')
+										svg.modal-form__tile-icon.svg
+											use(xlink:href='img/svgSprite.svg#icon__agent')
+										.modal-form__tile-title Агент
+									a.modal-form__tile(href='registration_client.html')
+										svg.modal-form__tile-icon.svg
+											use(xlink:href='img/svgSprite.svg#icon__client')
+										.modal-form__tile-title Клиент
+
+
+								.modal-form__end Уже зарегистрированы? #[a.link(data-hystmodal='#login') Войти]
+						.popup__footer
+							.popup__footer-line Возникли проблемы с регистрацией или входом?
+							.popup__footer-line Свяжитесь с нами по телефону #[a.link(href='tel:89501234567') 8 (950) 123-45-67]
+							.popup__footer-line Служба технической поддержки: #[a.link(href='mailto:support@teleport.ru') support@teleport.ru]
+		#login.hystmodal(aria-hidden='true')
+			.hystmodal__wrap
+				.hystmodal__window(role='dialog' aria-modal='true')
+					.popup
+						.popup__header
+							h2.popup__heading Вход в систему
+							svg.popup__close.svg(data-hystclose='')
+								use(xlink:href='img/svgSprite.svg#icon__cross')
+						.popup__body
+							.modal-form
+								.tabs
+									ul.tabs__caption
+										li.tabs__item.tabs__item_active По логину и паролю
+										li.tabs__item По сертификату ЭЦП
+									.tabs__content
+										.tabs__tab.tabs__tab_active
+											form.form
+												.form__row
+													.form__item
+														+field('Логин', placeholder, value, info, mod, true)
+													.form__item
+														+field_pass('Пароль', placeholder, value, info, mod, true)
+													button.button.button_blue.form__end-button Войти
+										.tabs__tab
+											.cripto
+												.cripto__warning
+													svg.cripto__icon.svg
+														use(xlink:href='img/svgSprite.svg#icon__info')
+													.cripto__message У вас не установлен или не включён плагин КриптоПро ЭЦП Browser plug-in для работы с сервисом
+												.cripto__inner
+													.cripto__text Для продолжения работы вам необходимо:
+													ol.cripto__list
+														li.cripto__li Сохранить последнюю версию установщика
+														li.cripto__li Запустить установочны файл #[a.link(href='#', download) Teleport.Installer] и выполнить действия по установке
+														li.cripto__li Включить расширение #[strong CryproPro CAsES Browser Plugin]
+														li.cripto__li После установки и включения обновить страницу
+											br
+											br
+											br
+											.cripto
+												.cripto__enter
+													.cripto__title У вас установлено и включено расширение #[strong CryproPro CAsES Browser Plugin], вы можете войти
+													button.button Войти
+								.modal-form__end Ещё не зарегистрированы? #[a.link(data-hystmodal='#registration') Регистрация]
+						.popup__footer
+							.popup__footer-line Возникли проблемы с регистрацией или входом?
+							.popup__footer-line Свяжитесь с нами по телефону #[a.link(href='tel:89501234567') 8 (950) 123-45-67]
+							.popup__footer-line Служба технической поддержки: #[a.link(href='mailto:support@teleport.ru') support@teleport.ru]
+		#forgot-pass.hystmodal(aria-hidden='true')
+			.hystmodal__wrap
+				.hystmodal__window(role='dialog' aria-modal='true')
+					.popup
+						.popup__header
+							h2.popup__heading Восстановление пароля
+							svg.popup__close.svg(data-hystclose='')
+								use(xlink:href='img/svgSprite.svg#icon__cross')
+						.popup__body
+							.modal-form
+								form.form
+									.form__row
+										.form__item
+											+field_mail('Электронная почта', placeholder, value, info, mod, true)
+										button.button.button_blue.form__end-button Войти
+								.modal-form__end Я помню пароль! #[a.link(data-hystmodal='#login') Войти]
+						.popup__footer
+							.popup__footer-line Возникли проблемы с регистрацией или входом?
+							.popup__footer-line Свяжитесь с нами по телефону #[a.link(href='tel:89501234567') 8 (950) 123-45-67]
+							.popup__footer-line Служба технической поддержки: #[a.link(href='mailto:support@teleport.ru') support@teleport.ru]
+		#partnership.hystmodal(aria-hidden='true')
+			.hystmodal__wrap
+				.hystmodal__window(role='dialog' aria-modal='true')
+					form.popup
+						.popup__header
+							h2.popup__heading Стать партнёром
+							svg.popup__close.svg(data-hystclose='')
+								use(xlink:href='img/svgSprite.svg#icon__cross')
+						.popup__body
+							.modal-form
+								.form
+									.form__row
+										.form__item
+											+field('ИНН партнёра', placeholder, value, info, mod, true)
+										.form__item
+											+field('Наименование партнёра', placeholder, value, info, mod, true)
+										.form__item
+											+field('ФИО контактного лица', placeholder, value, info, mod, true)
+										.form__item
+											+field_mail('Электронная почта', placeholder, value, info, mod, true)
+									.form__row.form__row_2-1
+										.form__item
+											+field_phone('Телефон', placeholder, value, info, mod, true)
+										.form__item
+											+field('доб.', placeholder, value, info, mod, true)
+									.form__row.form__row_2-1
+										.form__item
+											+field('Введите код с картинки', placeholder, value, info, mod, true)
+										.form__item captcha
+						.popup__footer.popup__footer_modal
+							button.button Отправить запрос
+		#request.hystmodal(aria-hidden='true')
+			.hystmodal__wrap
+				.hystmodal__window(role='dialog' aria-modal='true')
+					form.popup
+						.popup__header
+							h2.popup__heading Оставить заявку
+							svg.popup__close.svg(data-hystclose='')
+								use(xlink:href='img/svgSprite.svg#icon__cross')
+						.popup__body
+							.modal-form
+								.form
+									.form__row
+										.form__item
+											+field('Как к вам обращаться', placeholder, value, info, mod, true)
+										.form__item
+											+field_phone('Телефон', placeholder, value, info, mod, true)
+						.popup__footer.popup__footer_modal
+							button.button Отправить заявку
+
+		#bg.hystmodal(aria-hidden='true')
+			.hystmodal__wrap
+				.hystmodal__window(role='dialog' aria-modal='true')
+					.popup.popup_wide
+						.popup__header
+							h2.popup__heading Банковская гарантия
+							svg.popup__close.svg(data-hystclose='')
+								use(xlink:href='img/svgSprite.svg#icon__cross')
+						.popup__body
+							.production-popup
+								.production-popup__row
+									.production-popup__col.production-popup__col_half
+										.production-popup__text #[strong Банковская гарантия] — это один из наиболее удобных и надежных способов финансового обеспечения участия и исполнения государственного контракта. При использовании банковской гарантии вам не нужно замораживать собственные средства, вы лишь оплачиваете минимальную комиссию в банк за её выпуск.
+										.production-popup__text Получить банковскую гарантию через Телепорт — быстро и выгодно. В онлайн режиме вы одновременно подаете заявки во все банки-партнеры и далее выбираете выгодное предложение для вас.
+									.production-popup__col.production-popup__col_half
+										.production-popup__bubble
+											h3.production-popup__title Гарантии:
+											ul.production-popup__list
+												li.production-popup__li на обеспечение заявки на участие в закупке
+												li.production-popup__li на обеспечение исполнение контракта
+												li.production-popup__li на обеспечение возврата авансового платежа
+												li.production-popup__li на обеспечение гарантийных обязательств коммерческие гарантии
+								.production-popup__row
+									.production-popup__col
+										h3.production-popup__title Параметры:
+										.production-popup__grid
+											.production-popup__grid-item
+												.production-popup__grid-text от #[strong 0 ₽]
+													br
+													| до #[strong 1 млрд. ₽]
+											.production-popup__grid-item
+												.production-popup__grid-text Максимальный срок
+													br
+													| на исполнение — #[strong 7 лет]
+													br
+													| на гарантийные обязательства — #[strong 10 лет]
+											.production-popup__grid-item
+												.production-popup__grid-text Все регионы, в том числе #[strong Крым] и #[strong Кавказ]
+											.production-popup__grid-item
+												.production-popup__grid-text Выпуск гарантии от заведения до выдачи #[strong в течение 2 часов]
+											.production-popup__grid-item
+												.production-popup__grid-text #[strong Персональный менеджер]
+								small.production-popup__small Выдаваемое обеспечение соответствует требованиям 44-ФЗ и включено в единый реестр банковских гарантий.
+						.popup__footer.popup__footer_modal
+							a.button.button_blue(href='calculator.html') Рассчитать стоимость
+							a.button(data-hystmodal='#request') Оставить заявку
+		#credit.hystmodal(aria-hidden='true')
+			.hystmodal__wrap
+				.hystmodal__window(role='dialog' aria-modal='true')
+					.popup.popup_wide
+						.popup__header
+							h2.popup__heading Кредит на исполнение контракта
+							svg.popup__close.svg(data-hystclose='')
+								use(xlink:href='img/svgSprite.svg#icon__cross')
+						.popup__body
+							.production-popup
+								.production-popup__row
+									.production-popup__col.production-popup__col_3-4
+										.production-popup__text #[strong Кредит на исполнение контракта] — это кредит для пополнения оборотных средств в целях исполнения государственных контрактов.
+										.production-popup__text Кредит погашается за счёт средств, полученных от контрагента по мере исполнения контракта.
+								.production-popup__row
+									.production-popup__col
+										h3.production-popup__title Условия предоставления:
+										.production-popup__grid
+											.production-popup__grid-item
+												.production-popup__grid-text От #[strong 10 %] годовых
+											.production-popup__grid-item
+												.production-popup__grid-text Сумма — #[strong от 30 % до 70 %] от суммы контракта
+											.production-popup__grid-item
+												.production-popup__grid-text Срок рассмотрения #[strong от 1 дня]
+											.production-popup__grid-item
+												.production-popup__grid-text Максимальная сумма по кредиту — #[strong 50 млн. ₽]
+											.production-popup__grid-item
+												.production-popup__grid-text Максимальный срок кредита — #[strong до 36 месяцев]
+								small.production-popup__small Выдаваемое обеспечение соответствует требованиям 44-ФЗ и включено в единый реестр банковских гарантий.
+						.popup__footer.popup__footer_modal
+							a.button(data-hystmodal='#request') Оставить заявку
+		#account.hystmodal(aria-hidden='true')
+			.hystmodal__wrap
+				.hystmodal__window(role='dialog' aria-modal='true')
+					.popup.popup_wide
+						.popup__header
+							h2.popup__heading Расчётный счет
+							svg.popup__close.svg(data-hystclose='')
+								use(xlink:href='img/svgSprite.svg#icon__cross')
+						.popup__body
+							.production-popup
+								.production-popup__row
+									.production-popup__col
+										.production-popup__text Расчётный счет
+						.popup__footer.popup__footer_modal
+							a.button(data-hystmodal='#request') Оставить заявку
+
 	block templates
 
 	script(src='js/main.js')

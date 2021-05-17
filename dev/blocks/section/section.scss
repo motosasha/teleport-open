@@ -11,18 +11,35 @@
 	@media (min-width: $screen-xl) {
 		padding: 88px 0 96px;
 	}
+	&_bg_white {
+		background: $monochrome_10;
+	}
+	&__header {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 0 0 32px;
+		@media (min-width: $screen-sm) {
+			align-items: center;
+			flex-direction: row;
+			font-size: 32px;
+			margin: 0 0 40px;
+		}
+	}
+	&__button {
+		margin-top: 16px;
+		@media (min-width: $screen-sm) {
+			margin-top: 0;
+		}
+	}
 	&__anchor {
-		background: #000;
-		height: 1px;
 		left: 0;
 		position: absolute;
-		top: -64px;
+		top: 0;
 		width: 10px;
 		@media (min-width: $screen-md) {
-			top: -96px;
-		}
-		@media (min-width: $screen-xl) {
-			top: -48px;
+			top: -136px;
 		}
 	}
 }

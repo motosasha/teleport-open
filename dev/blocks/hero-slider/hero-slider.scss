@@ -1,0 +1,115 @@
+// В этом файле должны быть стили для БЭМ-блока hero-slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.hero-slider {
+	height: 100%;
+	.grid,
+	.grid__row,
+	.grid__col {
+		height: 100%;
+		position: relative;
+	}
+	&__slide {
+		height: auto !important;
+		overflow: hidden;
+		padding: 64px 0 72px;
+		@media (min-width: $screen-sm) {
+			padding: 72px 0 104px;
+		}
+		@media (min-width: $screen-lg) {
+			padding: 40px 0 132px;
+		}
+	}
+	&__tag {
+		color: $blue_01;
+		font-size: 16px;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		line-height: 120%;
+		margin-bottom: 4px;
+		@media (min-width: $screen-lg) {
+			font-size: 20px;
+		}
+	}
+	&__info {
+		align-items: flex-start;
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		height: 100%;
+		@media (min-width: $screen-lg) {
+			height: 388px;
+		}
+	}
+	&__title {
+		font-size: 28px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 100%;
+		margin: 0;
+		@media (min-width: $screen-lg) {
+			font-size: 40px;
+			line-height: 120%;
+		}
+	}
+	&__descr {
+		color: $monochrome_02;
+		font-size: 16px;
+		line-height: 150%;
+		margin: 16px 0 24px;
+	}
+	&__pagination {
+		bottom: 32px !important;
+		left: 50% !important;
+		margin: 0 auto;
+		position: absolute;
+		text-align: left;
+		transform: translateX(-50%);
+		width: calc(100% - 25px) !important;
+		z-index: 100 !important;
+		@media (min-width: $screen-sm) {
+			width: calc(540px - 25px) !important;
+		}
+		@media (min-width: $screen-md) {
+			width: calc(720px - 25px) !important;
+		}
+		@media (min-width: $screen-lg) {
+			bottom: 64px !important;
+			width: calc(960px - 25px) !important;
+		}
+		@media (min-width: $screen-xl) {
+			width: calc(1140px - 25px) !important;
+		}
+		@media (min-width: $screen-xxl) {
+			width: calc(1340px - 25px) !important;
+		}
+		.swiper-pagination-bullet {
+			cursor: pointer;
+			height: 12px;
+			width: 12px;
+		}
+		.swiper-pagination-bullet-active {}
+	}
+	&__img {
+		display: none;
+		height: auto;
+		left: -40px;
+		top: -40px;
+		position: absolute;
+		width: 300%;
+		@media (min-width: $screen-sm) {
+			display: block;
+		}
+		@media (min-width: $screen-md) {
+			left: 0;
+			top: -40px;
+			width: 160%;
+		}
+		@media (min-width: $screen-lg) {
+			left: 0;
+			top: 0;
+			width: 802px;
+		}
+	}
+}

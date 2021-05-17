@@ -3,7 +3,11 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .header-phone {
-	text-align: center;
+	text-align: right;
+	text-decoration: none;
+	@media (min-width: $screen-md) {
+		text-align: center;
+	}
 	&__descr {
 		color: $monochrome_01;
 		font-size: 11px;

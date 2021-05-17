@@ -1,0 +1,61 @@
+// В этом файле должны быть стили для БЭМ-блока partners-slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.partners-slider {
+	background: $monochrome_10;
+	box-shadow: 0 48px 48px rgba(0, 0, 0, 0.04);
+	border-radius: 8px 8px 32px 32px;
+	padding: 0 32px;
+	@media (min-width: $screen-sm) {
+		border-radius: 8px 8px 48px 48px;
+		padding: 0 104px;
+	}
+	@media (min-width: $screen-sm) {
+		&::before,
+		&::after {
+			content: '';
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 96px;
+			z-index: 2;
+		}
+		&::before {
+			background: linear-gradient(90deg, $monochrome_10 50%, rgba($monochrome_10, 0) 100%);
+			left: 0;
+		}
+		&::after {
+			background: linear-gradient(90deg, rgba($monochrome_10, 0) 0%, $monochrome_10 50%);
+			right: 0;
+		}
+	}
+	&__inner {}
+	&__slide {
+		padding: 24px 16px;
+		@media (min-width: $screen-md) {
+			padding: 40px 0;
+		}
+	}
+	&__img {
+		height: auto;
+		width: 100%;
+	}
+	&__button-prev,
+	&__button-next {
+		display: none;
+		height: 32px;
+		width: 32px;
+		&::after {
+			content: none;
+		}
+		@media (min-width: $screen-sm) {
+			display: flex;
+		}
+	}
+	&__button-prev {}
+	&__button-next {}
+	&__icon {
+		fill: $monochrome_01;
+	}
+}

@@ -4,10 +4,9 @@ block pageMain
 	.grid
 		.grid__row
 			.grid__col
-		.grid__row
-			.grid__col
 				section.section
-					h1.page__heading Все партнёры
+					.section__header
+						h1.page__heading Все партнёры
 					.partners-grid
 						- for (var i = 0; i < 15; ++i) {
 							.partners-grid__item

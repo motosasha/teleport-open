@@ -1,0 +1,59 @@
+// В этом файле должны быть стили для БЭМ-блока modal-form, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.modal-form {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	&__tiles {
+		display: grid;
+		flex: 1 1 auto;
+		grid-gap: 16px;
+		grid-template-columns: 1fr 1fr;
+		max-width: 336px;
+	}
+	&__tile {
+		align-items: center;
+		background: $monochrome_09;
+		border-radius: 8px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 24px 16px 16px;
+		text-decoration: none;
+		transition: transform .25s ease;
+		@media (min-width: $screen-sm) {
+			width: 160px;
+		}
+		&:hover {
+			transform: translateY(-2px);
+		}
+	}
+	&__tile-title {
+		color: $monochrome_01;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 120%;
+		margin-top: 16px;
+		text-align: center;
+		text-decoration: none;
+	}
+	&__tile-icon {
+		height: 80px;
+		width: 80px;
+	}
+	&__end {
+		color: $monochrome_03;
+		font-size: 14px;
+		line-height: 115%;
+		margin-top: 32px;
+		text-align: center;
+	}
+	.form {
+		width: 100%;
+	}
+	.form__end-button {
+		margin: 0 auto !important;
+	}
+}

@@ -1,0 +1,52 @@
+// В этом файле должны быть стили для БЭМ-блока production-grid, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.production-grid {
+	display: grid;
+	grid-gap: 8px;
+	@media (min-width: $screen-sm) {
+		grid-gap: 16px;
+	}
+	@media (min-width: $screen-md) {
+		grid-gap: 25px;
+		grid-template-columns: 1fr 1fr;
+	}
+	@media (min-width: $screen-lg) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	&__tile {
+		background: $monochrome_10;
+		border: 2px solid $monochrome_08;
+		box-sizing: border-box;
+		box-shadow: 0px 0px 30px rgba(56, 71, 109, 0.09);
+		border-radius: 8px;
+		display: grid;
+		grid-gap: 12px;
+		padding: 24px;
+		text-decoration: none;
+		transition: transform .25s ease;
+		@media (min-width: $screen-lg) {
+			border-radius: 8px 8px 32px 32px;
+			padding: 32px;
+		}
+		&[data-hystmodal]:hover {
+			transform: scale(1.063);
+		}
+	}
+	&__item {
+		color: $monochrome_01;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 120%;
+		@media (min-width: $screen-sm) {
+			font-size: 20px;
+		}
+	}
+	&__secondary {
+		color: $monochrome_02;
+		font-size: 12px;
+		line-height: 133%;
+		margin-top: 2px;
+	}
+}

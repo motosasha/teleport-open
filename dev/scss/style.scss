@@ -9,7 +9,11 @@
 @import "dev/scss/vendor.scss";
 @import "dev/scss/typography.scss";
 @import "dev/scss/reboot.scss";
+@import "dev/blocks/about/about.scss";
+@import "dev/blocks/agent/agent.scss";
+@import "dev/blocks/agent-grid/agent-grid.scss";
 @import "dev/blocks/button/button.scss";
+@import "dev/blocks/button-block/button-block.scss";
 @import "dev/blocks/calculator/calculator.scss";
 @import "dev/blocks/calculator-table/calculator-table.scss";
 @import "dev/blocks/checkbox/checkbox.scss";
@@ -24,12 +28,24 @@
 @import "dev/blocks/header/header.scss";
 @import "dev/blocks/header-nav/header-nav.scss";
 @import "dev/blocks/header-phone/header-phone.scss";
+@import "dev/blocks/hero/hero.scss";
+@import "dev/blocks/hero-slider/hero-slider.scss";
 @import "dev/blocks/input/input.scss";
+@import "dev/blocks/last/last.scss";
+@import "dev/blocks/modal-form/modal-form.scss";
 @import "dev/blocks/page/page.scss";
+@import "dev/blocks/partners/partners.scss";
 @import "dev/blocks/partners-grid/partners-grid.scss";
+@import "dev/blocks/partners-slider/partners-slider.scss";
+@import "dev/blocks/popup/popup.scss";
+@import "dev/blocks/production/production.scss";
+@import "dev/blocks/production-grid/production-grid.scss";
+@import "dev/blocks/production-popup/production-popup.scss";
 @import "dev/blocks/radio/radio.scss";
 @import "dev/blocks/section/section.scss";
 @import "dev/blocks/select/select.scss";
+@import "dev/blocks/steps/steps.scss";
+@import "dev/blocks/steps-grid/steps-grid.scss";
 @import "dev/blocks/tabs/tabs.scss";
 @import "dev/blocks/textarea/textarea.scss";
 

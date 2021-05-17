@@ -56,6 +56,15 @@ mixin field_file(label, info, isReq)
 			input.field__input.input.jfilestyle(type='file', data-text=label, data-placeholder='Выберите файл', required=!!isReq)
 		.field__info!= info
 
+mixin field_pass(label, placeholder, value, info, mod, isReq)
+	.field(class= mod)
+		label.field__inner
+			.field__row
+				.field__label!= label
+				a.field__forgot(data-hystmodal='#forgot-pass') Забыли пароль?
+			input.field__input.input(type='password', placeholder= placeholder, value= value, required=!!isReq)
+		.field__info!= info
+
 mixin field_textarea(label, placeholder, info, mod, isCheckbox, checkboxLabel)
 	.field(class= mod)
 		label.field__inner

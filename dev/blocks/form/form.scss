@@ -10,6 +10,12 @@
 		& + & {
 			margin-top: 24px;
 		}
+		&_2-1 {
+			display: grid;
+			grid-gap: 16px;
+			grid-template-columns: 2fr 1fr;
+			margin-top: 0 !important;
+		}
 	}
 	&__item {
 		margin-bottom: 24px;

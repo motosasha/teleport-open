@@ -8,6 +8,7 @@
 	&__item {
 		align-items: center;
 		display: flex;
+		position: relative;
 		& + & {
 			margin: 0 0 0 24px;
 		}
@@ -43,5 +44,22 @@
 	&__icon {
 		height: 24px;
 		width: 24px;
+	}
+	&__drop {
+		background: $monochrome_10;
+		box-shadow: 0 0 20px rgba(56, 71, 109, 0.15);
+		border-radius: 0 0 12px 12px;
+		display: flex;
+		flex-direction: column;
+		max-width: 290px;
+		padding: 16px 20px;
+		position: absolute;
+		top: 44px;
+		transform: translateX(-20px);
+		width: 75vw;
+		z-index: 10;
+	}
+	&__drop &__text {
+		white-space: normal;
 	}
 }

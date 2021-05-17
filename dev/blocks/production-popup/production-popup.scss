@@ -1,0 +1,103 @@
+// В этом файле должны быть стили для БЭМ-блока production-popup, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.production-popup {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	@media (min-width: $screen-sm) {
+		width: auto;
+	}
+	&__row {
+		@include row();
+		& + & {
+			margin-top: 40px;
+		}
+	}
+	&__col {
+		@include col(xs, 12, $grid-columns, 25px);
+		&_half {
+			@include col(lg, 6, $grid-columns, 25px);
+		}
+		&_3-4 {
+			@include col(lg, 9, $grid-columns, 25px);
+		}
+	}
+	&__text {
+		color: $monochrome_03;
+		font-size: 15px;
+		line-height: 160%;
+		& + & {
+			margin-top: 16px;
+		}
+	}
+	&__bubble {
+		background: $green_light_02;
+		border-radius: 16px;
+		margin-top: 32px;
+		padding: 24px;
+	}
+	&__title {
+		color: $monochrome_03;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 120%;
+		margin: 0 0 8px;
+	}
+	&__list {
+		list-style-type: disc;
+		margin: 0;
+		padding: 0 0 0 24px;
+	}
+	&__li {
+		color: $monochrome_03;
+		font-size: 14px;
+		line-height: 150%;
+	}
+	&__grid {
+		display: grid;
+		grid-gap: 12px;
+		@media (min-width: $screen-md) {
+			grid-gap: 25px;
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+	&__grid-item {
+		align-items: flex-end;
+		border: 1px solid $blue_light_01;
+		box-sizing: border-box;
+		border-radius: 12px;
+		display: flex;
+		padding: 16px;
+		@media (min-width: $screen-md) {
+			min-height: 104px;
+			&:nth-child(2) {
+				grid-column-start: 2;
+				grid-column-end: 4;
+			}
+			&:nth-child(4) {
+				grid-column-start: 1;
+				grid-column-end: 3;
+			}
+			&:nth-child(5) {
+				grid-column-start: 3;
+				grid-column-end: 5;
+			}
+		}
+	}
+	&__grid-text {
+		font-size: 14px;
+		line-height: 133%;
+		@media (min-width: $screen-md) {
+			font-size: 16px;
+		}
+	}
+	&__small {
+		color: $monochrome_04;
+		display: block;
+		font-size: 12px;
+		line-height: 134%;
+		margin-top: 24px;
+	}
+}

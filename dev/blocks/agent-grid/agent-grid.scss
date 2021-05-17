@@ -1,0 +1,43 @@
+// В этом файле должны быть стили для БЭМ-блока agent-grid, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.agent-grid {
+	display: grid;
+	grid-gap: 8px;
+	@media (min-width: $screen-sm) {
+		grid-gap: 16px;
+	}
+	@media (min-width: $screen-md) {
+		grid-gap: 25px;
+		grid-template-columns: 1fr 1fr;
+	}
+	&__tile {
+		background: $monochrome_10;
+		box-shadow: 0 0 30px rgba(56, 71, 109, 0.09);
+		border-radius: 32px;
+		padding: 32px 24px;
+		@media (min-width: $screen-lg) {
+			padding: 40px 32px 48px;
+		}
+	}
+	&__title {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 120%;
+		margin: 0 0 12px;
+		@media (min-width: $screen-lg) {
+			font-size: 24px;
+			line-height: 100%;
+		}
+	}
+	&__text {
+		color: $monochrome_02;
+		font-size: 15px;
+		line-height: 175%;
+		span {
+			color: $blue_01;
+			font-weight: 700;
+		}
+	}
+}

@@ -3,35 +3,28 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .grid {
-	@include container(25px, 25px, 25px, 25px, 25px);
+	@include container(25px, 25px, 25px, 25px, 25px, 25px);
 	&__row {
-		@include row(25px, 25px, 25px, 25px, 25px);
+		@include row(25px, 25px, 25px, 25px, 25px, 25px);
 	}
 	&__col {
 		@include col(xs, 12, $grid-columns, 25px);
 		@include col(sm, 12, $grid-columns, 25px);
-		&_md_5 {
-			@include col(md, 5, $grid-columns, 25px);
+		&_sm_4 {
+			@include col(sm, 4, $grid-columns, 25px);
 		}
-		&_md_6 {
-			@include col(md, 6, $grid-columns, 25px);
-		}
-		&_md_7 {
-			@include col(md, 7, $grid-columns, 25px);
-		}
-		&_lg_5 {
-			@include col(lg, 5, $grid-columns, 25px);
-		}
-		&_lg_7 {
-			@include col(lg, 7, $grid-columns, 25px);
-		}
-
-
 		&_sm_6 {
 			@include col(sm, 6, $grid-columns, 25px);
 		}
+		&_sm_8 {
+			@include col(sm, 8, $grid-columns, 25px);
+		}
+
 		&_md_3 {
 			@include col(md, 3, $grid-columns, 25px);
+		}
+		&_md_5 {
+			@include col(md, 5, $grid-columns, 25px);
 		}
 		&_md_6 {
 			@include col(md, 6, $grid-columns, 25px);
@@ -98,8 +91,14 @@
 		&_xl_4 {
 			@include col(xl, 4, $grid-columns, 25px);
 		}
+		&_xl_5 {
+			@include col(xl, 5, $grid-columns, 25px);
+		}
 		&_xl_6 {
 			@include col(xl, 6, $grid-columns, 25px);
+		}
+		&_xl_7 {
+			@include col(xl, 7, $grid-columns, 25px);
 		}
 		&_xl_8 {
 			@include col(xl, 8, $grid-columns, 25px);

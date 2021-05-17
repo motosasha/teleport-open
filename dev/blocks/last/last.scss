@@ -1,0 +1,42 @@
+// В этом файле должны быть стили для БЭМ-блока last, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.last {
+	&__grid {
+		background: $monochrome_10;
+		box-shadow: 0 48px 48px rgba(0, 0, 0, 0.04);
+		border-radius: 8px 8px 32px 32px;
+		display: grid;
+		grid-gap: 24px 16px;
+		grid-template-columns: 1fr 1fr;
+		margin-bottom: 32px;
+		padding: 32px;
+		@media (min-width: $screen-sm) {
+			border-radius: 8px 8px 48px 48px;
+			grid-template-columns: 1fr 1fr 1fr;
+			margin-bottom: 64px;
+			padding: 32px;
+		}
+		@media (min-width: $screen-lg) {
+			grid-gap: 12px;
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+	&__item {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+	}
+	&__icon {
+		height: 64px;
+		width: 64px;
+	}
+	&__text {
+		color: $monochrome_02;
+		font-size: 15px;
+		line-height: 125%;
+		margin-top: 16px;
+		text-align: center;
+	}
+}

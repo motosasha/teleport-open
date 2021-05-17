@@ -47,4 +47,23 @@
 			background: $green_03;
 		}
 	}
+	&_round {
+		border-radius: 32px;
+		font-weight: 600;
+		@media (min-width: $screen-md) {
+			font-size: 20px;
+			line-height: 120%;
+			padding: 12px 24px;
+		}
+	}
+	&_large {
+		border-radius: 32px;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		padding: 16px 40px !important;
+		@media (min-width: $screen-lg) {
+			font-size: 20px;
+			line-height: 120%;
+		}
+	}
 }

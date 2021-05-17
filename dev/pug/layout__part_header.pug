@@ -3,8 +3,13 @@
 		.grid__row
 			.grid__col
 				.header__top
-					svg.header__logo.svg
-						use(xlink:href='img/svgSprite.svg#logo')
+					if isMainPage === true
+						svg.header__logo.svg
+							use(xlink:href='img/svgSprite.svg#logo')
+					else
+						a(href='/')
+							svg.header__logo.svg
+								use(xlink:href='img/svgSprite.svg#logo')
 					a.header__phone.header__phone_mobile.header-phone(href='tel:88002000000')
 						.header-phone__descr Горячая линия
 						.header-phone__number 8 800 200-00-00
@@ -12,21 +17,25 @@
 						.header-phone__descr Телефон горячей линии
 						.header-phone__number 8 800 200-00-00
 					.header__buttons
-						a.header__button.button(href='#') Регистрация
-						a.header__button.button.button_black(href='#') Вход
+						a.header__button.button(data-hystmodal='#registration') Регистрация
+						a.header__button.button.button_black(data-hystmodal='#login') Вход
 				.header__bottom
 					.header__nav-scroll
 						.header__nav.header-nav
 							.header-nav__item
-								a.header-nav__text(href='#') О нас
+								a.header-nav__text(href='/index.html#about') О нас
 							.header-nav__item
-								a.header-nav__text(href='#') Продукты
+								a.header-nav__text(href='index.html#production') Продукты
 								a.header-nav__trigger
 									svg.header-nav__icon.svg
 										use(xlink:href='img/svgSprite.svg#icon__arrow_down')
+								.header-nav__drop
+									a.header-nav__text(data-hystmodal='#bg') Банковская гарантия
+									a.header-nav__text(data-hystmodal='#credit') Кредит на исполнение контракта
+									a.header-nav__text(href='#') Расчетный счёт
 							.header-nav__item
-								a.header-nav__text(href='#') Агентам
+								a.header-nav__text(href='index.html#agent') Агентам
 							.header-nav__item
-								a.header-nav__text(href='#') Партнёры
+								a.header-nav__text(href='index.html#partners') Партнёры
 							.header-nav__item
-								a.header-nav__text(href='#') Калькулятор
+								a.header-nav__text(href='calculator.html') Калькулятор
