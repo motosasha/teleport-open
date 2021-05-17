@@ -38,9 +38,9 @@
 					<div class="grid">
 						<div class="grid__row">
 							<div class="grid__col">
-								<div class="header__top"><svg class="header__logo svg">
-										<use xlink:href="img/svgSprite.svg#logo"></use>
-									</svg><a class="header__phone header__phone_mobile header-phone" href="tel:88002000000">
+								<div class="header__top"><a href="/"><svg class="header__logo svg">
+											<use xlink:href="img/svgSprite.svg#logo"></use>
+										</svg></a><a class="header__phone header__phone_mobile header-phone" href="tel:88002000000">
 										<div class="header-phone__descr">Горячая линия</div>
 										<div class="header-phone__number">8 800 200-00-00</div>
 									</a><a class="header__phone header-phone" href="tel:88002000000">
@@ -70,229 +70,182 @@
 				</div>
 			</div>
 			<div class="page__main">
-				<section class="hero">
-					<div class="hero__inner">
-						<div class="hero__slider hero-slider swiper-container">
-							<div class="hero-slider__inner swiper-wrapper">
-								<div class="hero-slider__slide swiper-slide">
-									<div class="grid">
-										<div class="grid__row">
-											<div class="grid__col grid__col_sm_8 grid__col_md_6 grid__col_xl_5">
-												<div class="hero-slider__info">
-													<div class="hero-slider__tag">#ВремяДеньги</div>
-													<h2 class="hero-slider__title">Все банки одним кликом</h2>
-													<p class="hero-slider__descr">Инновационный портал для получения банковской гарантии</p><a class="button button_large" data-hystmodal="#registration">Регистрация</a>
-												</div>
+				<div class="grid">
+					<div class="grid__row">
+						<div class="grid__col"></div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col_xl_10 grid__col-offset_xl_1">
+							<section class="section">
+								<div class="section__header">
+									<h1 class="page__heading">Расчёт стоимости банковской гарантии</h1>
+								</div>
+								<form class="calculator">
+									<div class="calculator__tabs"><label class="calculator__tab-item"><input class="calculator__tab-radio" type="radio" name="calcTab" value="0" checked>
+											<div class="calculator__tab-fake">44-ФЗ</div>
+										</label><label class="calculator__tab-item"><input class="calculator__tab-radio" type="radio" name="calcTab" value="1">
+											<div class="calculator__tab-fake">223-ФЗ</div>
+										</label><label class="calculator__tab-item"><input class="calculator__tab-radio" type="radio" name="calcTab" value="2">
+											<div class="calculator__tab-fake">ПП 615</div>
+										</label></div>
+									<div class="calculator__body">
+										<div class="calculator__row">
+											<div class="calculator__radios"><label class="radio"><input class="radio__input" id="calcExec" type="radio" name="o" checked>
+													<div class="radio__fake-input">
+														<div class="radio__mark"></div>
+													</div>
+													<div class="radio__label">Исполнение</div>
+												</label><label class="radio"><input class="radio__input" id="calcPart" type="radio" name="o">
+													<div class="radio__fake-input">
+														<div class="radio__mark"></div>
+													</div>
+													<div class="radio__label">Участие</div>
+												</label><label class="radio"><input class="radio__input" id="calcGO" type="radio" name="o">
+													<div class="radio__fake-input">
+														<div class="radio__mark"></div>
+													</div>
+													<div class="radio__label">Гарантийные обязательства</div>
+												</label><label class="radio"><input class="radio__input" id="calcVA" type="radio" name="o" disabled>
+													<div class="radio__fake-input">
+														<div class="radio__mark"></div>
+													</div>
+													<div class="radio__label">Возврат аванса</div>
+												</label><label class="checkbox"><input class="checkbox__input" type="checkbox" />
+													<div class="checkbox__fake-input">
+														<div class="checkbox__mark"></div>
+													</div>
+													<div class="checkbox__label">Наличие аванса</div>
+												</label></div>
+										</div>
+										<div class="calculator__form">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Сумма (₽)</div><input class="field__input input input_sum" type="text" required="required" />
+												</label>
+												<div class="field__info"></div>
 											</div>
-											<div class="grid__col grid__col_sm_4 grid__col_md_6 grid__col_xl_6 grid__col-offset_xl_1"><img class="hero-slider__img" src="img/img__hero_01.png" srcset="img/img__hero_01.png, img/img__hero_01_x2.png 2x" alt=""></div>
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Срок</div><input class="field__input input input_date_period" type="text" placeholder="Выберите период" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div><button class="button button_blue">Рассчитать</button>
+										</div>
+										<div class="calculator__row"><a class="calculator__link" href="#" target="_blank">Проверить необходимость предоставления обеспечения</a>
+											<div class="calculator__date">Тарифы по состоянию на <span>32.03.2021</span></div>
+										</div>
+										<div class="calculator__table">
+											<table class="calculator-table">
+												<thead>
+													<tr>
+														<th>
+															<div class="calculator-table__th-label">Банк</div>
+														</th>
+														<th data-sort="int">
+															<div class="calculator-table__th-label">Базовая, ₽</div>
+														</th>
+														<th data-sort="int">
+															<div class="calculator-table__th-label">Со скидкой, ₽</div>
+														</th>
+														<th data-sort="int">
+															<div class="calculator-table__th-label">Специальная, ₽</div>
+														</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">Реалист</div>
+																<div class="calculator-table__secondary">B(RU)</div>
+															</div>
+														</td>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">200 000</div>
+																<div class="calculator-table__secondary">2.62% годовых</div>
+															</div>
+														</td>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">140 000</div>
+																<div class="calculator-table__secondary">1.83% годовых</div>
+																<div class="calculator-table__mark">-30%</div>
+															</div>
+														</td>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">126 000</div>
+																<div class="calculator-table__secondary">1.65% годовых</div>
+																<div class="calculator-table__mark">-10%</div>
+															</div>
+														</td>
+														<td><a class="button button_green" href="#">Получить</a></td>
+													</tr>
+													<tr>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">Левобережный</div>
+																<div class="calculator-table__secondary">ruA-</div>
+															</div>
+														</td>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">229 315</div>
+																<div class="calculator-table__secondary">3.00% годовых</div>
+															</div>
+														</td>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">152 877</div>
+																<div class="calculator-table__secondary">2.00% годовых</div>
+																<div class="calculator-table__mark">-33%</div>
+															</div>
+														</td>
+														<td data-sort-value="0">
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">—</div>
+															</div>
+														</td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">Промсвязьбанк</div>
+																<div class="calculator-table__secondary">AA(RU), ruAA</div>
+															</div>
+														</td>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">29 315</div>
+																<div class="calculator-table__secondary">3.00% годовых</div>
+															</div>
+														</td>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">160 521</div>
+																<div class="calculator-table__secondary">2.10% годовых</div>
+																<div class="calculator-table__mark">-30%</div>
+															</div>
+														</td>
+														<td>
+															<div class="calculator-table__td-inner">
+																<div class="calculator-table__primary">144 468</div>
+																<div class="calculator-table__secondary">1.89% годовых</div>
+																<div class="calculator-table__mark">-10%</div>
+															</div>
+														</td>
+														<td><a class="button button_green" href="#">Получить</a></td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
 									</div>
-								</div>
-								<div class="hero-slider__slide swiper-slide">
-									<div class="grid">
-										<div class="grid__row">
-											<div class="grid__col grid__col_sm_8 grid__col_md_6 grid__col_xl_5">
-												<div class="hero-slider__info">
-													<h2 class="hero-slider__title">Банковская гарантия</h2>
-													<p class="hero-slider__descr">По 44-ФЗ, 223-ФЗ, 185-ФЗ (615ПП)<br>Коммерческие гарантии</p><a class="button button_large" href="calculator.html">Рассчитать стоимость</a>
-												</div>
-											</div>
-											<div class="grid__col grid__col_sm_4 grid__col_md_6 grid__col_xl_6 grid__col-offset_xl_1"><img class="hero-slider__img" src="img/img__hero_02.png" srcset="img/img__hero_02.png, img/img__hero_02_x2.png 2x" alt=""></div>
-										</div>
-									</div>
-								</div>
-								<div class="hero-slider__slide swiper-slide">
-									<div class="grid">
-										<div class="grid__row">
-											<div class="grid__col grid__col_sm_8 grid__col_md_6 grid__col_xl_5">
-												<div class="hero-slider__info">
-													<h2 class="hero-slider__title">Наши партнеры</h2>
-													<p class="hero-slider__descr">Инновационный портал для получения банковской гарантии</p><a class="button button_large" href="partners.html">Подробнее</a>
-												</div>
-											</div>
-											<div class="grid__col grid__col_sm_4 grid__col_md_6 grid__col_xl_6 grid__col-offset_xl_1"><img class="hero-slider__img" src="img/img__hero_03.png" srcset="img/img__hero_03.png, img/img__hero_03_x2.png 2x" alt=""></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="hero-slider__pagination swiper-pagination"></div>
-						</div>
-						<div class="hero__circle"></div>
-					</div>
-				</section>
-				<section class="section section_bg_white about">
-					<div class="section__anchor" id="about"></div>
-					<div class="grid">
-						<div class="grid__row">
-							<div class="grid__col grid__col_lg_6 grid__col_xl_5">
-								<div class="section__header">
-									<h2 class="page__heading" data-aos="fade-up">О нас</h2>
-								</div>
-								<p class="page__text" data-aos="fade-up"><strong>Телепорт</strong> — это оптимизированная айти-платформа, где каждый участник государственных закупок в режиме онлайн сможет получить необходимый банковский продукт для исполнения контракта.</p>
-								<p class="page__text" data-aos="fade-up" data-aos-delay="125">Уникальность <strong>Телепорта</strong> в том, что одним кликом вы получаете решения от всех банков-партнеров. Вам больше не потребуется тратить ресурсы на заведение и подписание заявок во все банки.</p>
-								<p class="page__text" data-aos="fade-up" data-aos-delay="250">Цель айти-платформы в том, чтобы вы получили максимальный результат с минимальными расходами.</p>
-							</div>
-							<div class="grid__col grid__col_lg_6 grid__col_xl_7">
-								<div class="about__inner" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom">
-									<picture>
-										<source media="(max-width: 1199px)" srcset="img/img__about.png, img/img__about_x2.png 2x">
-										<source media="(min-width: 1200px)" srcset="img/img__about_x2.png"><img class="about__img" src="img/img__about.png" alt="">
-									</picture>
-								</div>
-							</div>
+								</form>
+							</section>
 						</div>
 					</div>
-				</section>
-				<section class="section partners">
-					<div class="section__anchor" id="partners"></div>
-					<div class="grid">
-						<div class="grid__row">
-							<div class="grid__col" data-aos="fade">
-								<div class="section__header">
-									<h2 class="page__heading">Наши партнёры</h2><a class="button button_blue section__button" href="partners.html">Все партнёры</a>
-								</div>
-								<div class="swiper-container partners__slider partners-slider">
-									<div class="swiper-wrapper partners-slider__inner">
-										<div class="partners-slider__slide swiper-slide"><img class="partners-slider__img" src="img/img__partner-logo.png" alt="Partner name"></div>
-										<div class="partners-slider__slide swiper-slide"><img class="partners-slider__img" src="img/img__partner-logo.png" alt="Partner name"></div>
-										<div class="partners-slider__slide swiper-slide"><img class="partners-slider__img" src="img/img__partner-logo.png" alt="Partner name"></div>
-									</div>
-									<div class="partners-slider__button-prev swiper-button-prev"><svg class="partners-slider__icon svg">
-											<use xlink:href="img/svgSprite.svg#icon__shevron_left"></use>
-										</svg></div>
-									<div class="partners-slider__button-next swiper-button-next"><svg class="partners-slider__icon svg">
-											<use xlink:href="img/svgSprite.svg#icon__shevron_right"></use>
-										</svg></div>
-								</div>
-								<div class="button-block">
-									<div class="button-block__text">Приглашаем банки<br>к сотрудничеству</div><a class="button button_round button-block__button" data-hystmodal="#partnership">Стать партнёром</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="section section_bg_white production">
-					<div class="section__anchor" id="production"></div>
-					<div class="grid">
-						<div class="grid__row">
-							<div class="grid__col">
-								<div class="section__header">
-									<h2 class="page__heading">Чем мы будем Вам полезны</h2>
-								</div>
-								<div class="production__grid production-grid"><a class="production-grid__tile" data-hystmodal="#bg" data-aos="fade-up">
-										<div class="production-grid__item">Банковская гарантия</div>
-										<div class="production-grid__item">Коммерческие гарантии</div>
-										<div class="production-grid__item">Гарантии<div class="production-grid__secondary">по 44-ФЗ, 223-ФЗ, 185-ФЗ (615-ПП)</div>
-										</div>
-									</a><a class="production-grid__tile" data-hystmodal="#credit" data-aos="fade-up" data-aos-delay="250">
-										<div class="production-grid__item">Кредит на исполнение контракта<div class="production-grid__secondary">по 44-ФЗ, 223-ФЗ</div>
-										</div>
-									</a>
-									<div class="production-grid__tile" data-aos="fade-up" data-aos-delay="500">
-										<!-- a(data-hystmodal='#account') 321-->
-										<div class="production-grid__item">Расчётный счет</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="section steps">
-					<div class="grid">
-						<div class="grid__row">
-							<div class="grid__col">
-								<div class="section__header">
-									<h2 class="page__heading">3 шага к успеху</h2><a class="button button_blue section__button" href="calculator.html">Рассчитать стоимость</a>
-								</div>
-								<div class="steps__grid steps-grid">
-									<div class="steps-grid__tile" data-aos="fade-up">
-										<div class="steps-grid__num">1</div>
-										<div class="steps-grid__text"><strong>Создайте заявку</strong> в личном кабинете и подпишите документы ЭЦП</div>
-									</div>
-									<div class="steps-grid__tile" data-aos="fade-up" data-aos-delay="250">
-										<div class="steps-grid__num">2</div>
-										<div class="steps-grid__text">Банки рассмотрят вашу заявку и <strong>ответят в течении 15 минут</strong></div>
-									</div>
-									<div class="steps-grid__tile" data-aos="fade-up" data-aos-delay="500">
-										<div class="steps-grid__num">3</div>
-										<div class="steps-grid__text"><strong>Поздравляем</strong>, вы получили самую выгодную банковскую гарантию!</div>
-									</div>
-								</div><a class="steps__button button button_round" data-hystmodal="#request">Оставить заявку</a>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="section section_bg_white agent">
-					<div class="section__anchor" id="agent"></div>
-					<div class="grid">
-						<div class="grid__row">
-							<div class="grid__col grid__col_xl_10 grid__col-offset_xl_1">
-								<div class="section__header">
-									<h2 class="page__heading">Агентам</h2>
-								</div>
-								<div class="agent__grid agent-grid">
-									<div class="agent-grid__tile" data-aos="fade-right">
-										<h3 class="agent-grid__title">Быстро</h3>
-										<div class="agent-grid__text">Наш сервис позволяет завести и подписать заявку для всех банков-партнеров. Одним действием вы получаете лучшие предложения. Минимальный расход времени — максимальный результат! Помните, <span>#ВремяДеньги</span>!</div>
-									</div>
-									<div class="agent-grid__tile" data-aos="fade-left" data-aos-delay="250">
-										<h3 class="agent-grid__title">Выгодно</h3>
-										<div class="agent-grid__text">При работе с айти-платформой вы получаете лучшие предложения от банков-партнеров по выгодной для вас цене. Вам останется самое сложное – выбрать лучшее из лучших!</div>
-									</div>
-									<div class="agent-grid__tile" data-aos="fade-right" data-aos-delay="500">
-										<h3 class="agent-grid__title">Удобно</h3>
-										<div class="agent-grid__text">Через личный кабинет в режиме онлайн вы всегда видите актуальную информацию. Работа с порталом сопровождается личным куратором, который поможет вам на каждом этапе сделки. С вас документы – от нас решение!</div>
-									</div>
-									<div class="agent-grid__tile" data-aos="fade-left" data-aos-delay="750">
-										<h3 class="agent-grid__title">Надежно</h3>
-										<div class="agent-grid__text">Все наши банки-партнеры входят в перечень Минфина. Данные пользователей айти-платформы надежно защищены. Безопасность данных клиентов обеспечивается с помощью системы идентификации. Для документов используются электронные подписи клиентов и банков. С нами вы в надежных руках!</div>
-									</div>
-								</div><a class="agent__button button button_round" data-hystmodal="#registration">Регистрация</a>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="section last">
-					<div class="grid">
-						<div class="grid__row">
-							<div class="grid__col grid__col_xl_10 grid__col-offset_xl_1" data-aos="fade">
-								<div class="section__header">
-									<h2 class="page__heading">Вам больше <span>не</span> придётся</h2>
-								</div>
-								<div class="last__grid">
-									<div class="last__item"><svg class="last__icon svg">
-											<use xlink:href="img/svgSprite.svg#icon__no_web"></use>
-										</svg>
-										<div class="last__text">Изучать сайты банков</div>
-									</div>
-									<div class="last__item"><svg class="last__icon svg">
-											<use xlink:href="img/svgSprite.svg#icon__no_form"></use>
-										</svg>
-										<div class="last__text">Заполнять однотипные анкеты</div>
-									</div>
-									<div class="last__item"><svg class="last__icon svg">
-											<use xlink:href="img/svgSprite.svg#icon__no_phone"></use>
-										</svg>
-										<div class="last__text">Тратить время на телефонные разговоры</div>
-									</div>
-									<div class="last__item"><svg class="last__icon svg">
-											<use xlink:href="img/svgSprite.svg#icon__no_compare"></use>
-										</svg>
-										<div class="last__text">Самому сравнивать предложения</div>
-									</div>
-									<div class="last__item"><svg class="last__icon svg">
-											<use xlink:href="img/svgSprite.svg#icon__no_mail"></use>
-										</svg>
-										<div class="last__text">Плодить переписки, теряя письма</div>
-									</div>
-								</div>
-								<div class="button-block">
-									<div class="button-block__text">Экономь время и деньги<br>вместе с нами!</div><a class="button button_round button-block__button" data-hystmodal="#registration">Регистрация</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+				</div>
 			</div>
 			<div class="page__footer">
 				<div class="footer">
