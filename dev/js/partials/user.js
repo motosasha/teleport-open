@@ -145,7 +145,7 @@ $(document).ready(function() {
 	// aos
 	AOS.init({
 		easing: 'ease',
-		duration: 1500
+		duration: 1000
 	});
 	if (document.readyState === 'complete') {
 		AOS.refresh();

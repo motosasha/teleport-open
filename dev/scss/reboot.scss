@@ -16,8 +16,10 @@ body {
 html {
 	font-family: sans-serif;
 	line-height: 100%;
+	margin-right: 0 !important;
 	-webkit-tap-highlight-color: rgba($color-black, 0);
 	-webkit-text-size-adjust: 100%;
+	top: auto !important;
 }
 
 body {
