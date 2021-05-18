@@ -120,11 +120,15 @@ $(document).ready(function() {
 	// scroll
 	$('.header a.header-nav__text').on('click', function(event) {
 		if (this.hash !== "") {
-			event.preventDefault();
+			if (this.href === location.href) {
+				event.preventDefault();
+			}
 			let hash = this.hash;
-			$('html, body').animate({
-				scrollTop: $(hash).offset().top
-			}, 800);
+			if ($(hash).length) {
+				$('html, body').animate({
+					scrollTop: $(hash).offset().top
+				}, 800);
+			}
 		}
 	});
 
