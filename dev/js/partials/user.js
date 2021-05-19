@@ -154,4 +154,7 @@ $(document).ready(function() {
 	if (document.readyState === 'complete') {
 		AOS.refresh();
 	}
+
+	// tippy
+	tippy('[data-tippy-content]');
 });

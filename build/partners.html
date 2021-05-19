@@ -143,7 +143,7 @@
 													<use xlink:href="img/svgSprite.svg#icon__fb"></use>
 												</svg></a><a class="footer-socials__item" href="#"><svg class="footer-socials__icon svg">
 													<use xlink:href="img/svgSprite.svg#icon__tg"></use>
-												</svg></a></div><a class="footer__button" href="#">Свяжитесь со мной</a>
+												</svg></a></div><a class="footer__button" data-hystmodal="#help">Свяжитесь со мной</a>
 									</div>
 								</div>
 							</div>
@@ -404,6 +404,42 @@
 							</div>
 						</div>
 						<div class="popup__footer popup__footer_modal"><button class="button">Отправить заявку</button></div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="hystmodal" id="help" aria-hidden="true">
+			<div class="hystmodal__wrap">
+				<div class="hystmodal__window" role="dialog" aria-modal="true">
+					<form class="popup">
+						<div class="popup__header">
+							<h2 class="popup__heading">Свяжитесь со мной</h2><svg class="popup__close svg" data-hystclose="">
+								<use xlink:href="img/svgSprite.svg#icon__cross"></use>
+							</svg>
+						</div>
+						<div class="popup__body">
+							<div class="modal-form">
+								<div class="form">
+									<div class="form__row">
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Как к вам обращаться</div><input class="field__input input" type="text" required="required" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+										<div class="form__item">
+											<div class="field"><label class="field__inner">
+													<div class="field__label">Телефон</div><input class="field__input input input_phone" type="text" placeholder="+7 (___) ___-__-__" />
+												</label>
+												<div class="field__info"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="popup__footer popup__footer_modal"><button class="button">Отправить</button></div>
 					</form>
 				</div>
 			</div>

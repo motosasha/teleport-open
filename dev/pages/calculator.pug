@@ -58,11 +58,17 @@ block pageMain
 											th
 												.calculator-table__th-label Банк
 											th(data-sort="int")
-												.calculator-table__th-label Базовая, ₽
+												.calculator-table__th-label Базовая, ₽
+													svg.calculator-table__icon.svg(data-tippy-content='Стоимость по базовым тарифам банков')
+														use(xlink:href='img/svgSprite.svg#icon__help')
 											th(data-sort="int")
-												.calculator-table__th-label Со скидкой, ₽
+												.calculator-table__th-label Со скидкой, ₽
+													svg.calculator-table__icon.svg(data-tippy-content='Стоимость с учетом возможной скидки банков')
+														use(xlink:href='img/svgSprite.svg#icon__help')
 											th(data-sort="int")
-												.calculator-table__th-label Специальная, ₽
+												.calculator-table__th-label Специальная, ₽
+													svg.calculator-table__icon.svg(data-tippy-content='Стоимость при оформлении на Teleport')
+														use(xlink:href='img/svgSprite.svg#icon__help')
 											th
 									tbody
 										tr
@@ -125,3 +131,6 @@ block pageMain
 													.calculator-table__mark -10%
 											td
 												a.button.button_green(href='#') Получить
+					.need-help
+						.need-help__title Необходима консультация?
+						a.button.button_round.need-help__button(data-hystmodal='#help') Свяжитесь с нами

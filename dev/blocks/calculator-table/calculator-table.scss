@@ -119,7 +119,7 @@
 		@media (min-width: $screen-lg) {
 			vertical-align: bottom;
 			&:first-of-type {
-				width: 280px;
+				width: 240px;
 			}
 			&:last-of-type {
 				width: 104px;
@@ -148,5 +148,16 @@
 		font-weight: 700;
 		order: 1;
 		line-height: 150%;
+	}
+	&__icon {
+		fill: $monochrome_04;
+		flex: 0 0 auto;
+		height: 16px;
+		margin: 0 4px;
+		width: 16px;
+		th.sorting-asc &,
+		th.sorting-desc & {
+			fill: $blue_01;
+		}
 	}
 }
