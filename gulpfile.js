@@ -59,7 +59,7 @@ let prettyOption = {
 
 // Список и настройки плагинов postCSS
 let postCssPlugins = [
-	autoprefixer({grid: true}),
+	autoprefixer(),
 	mqpacker({
 		sort: true
 	}),
@@ -175,28 +175,6 @@ function compileSass() {
 }
 exports.compileSass = compileSass;
 
-function compileLanding() {
-	const fileList = [
-		`${dir.landing}/landing.scss`,
-	];
-	return src(fileList, { sourcemaps: true })
-		.pipe(plumber({
-			errorHandler: function (err) {
-				console.log(err.message);
-				this.emit('end');
-			}
-		}))
-		.pipe(debug({title: 'Compiles:'}))
-		.pipe(sass({includePaths: [__dirname+'/','node_modules']}))
-		.pipe(postcss(postCssPlugins))
-		.pipe(csso({
-			restructure: false,
-		}))
-		.pipe(dest(`${dir.build}/css`, { sourcemaps: '.' }))
-		.pipe(browserSync.stream());
-}
-exports.compileLanding = compileLanding;
-
 function buildJs(cb) {
 	let jsPath = `${dir.dev}js/`;
 	if(fileExist(jsPath)) {
@@ -299,18 +277,6 @@ function copyFonts(cb) {
 }
 exports.copyFonts = copyFonts;
 
-function copyVideo(cb) {
-	let imgPath = `${dir.dev}video/`;
-	if(fileExist(imgPath)) {
-		return src(imgPath + '**/*.*')
-			.pipe(dest(`${dir.build}video/`))
-	}
-	else {
-		cb();
-	}
-}
-exports.copyVideo = copyVideo;
-
 
 
 function clearBuildDir() {
@@ -326,7 +292,7 @@ function reload(done) {
 }
 
 function deploy(cb) {
-	let pageAddress = '/agrostar';
+	let pageAddress = '/teleport';
 	ghPages.publish(path.join(process.cwd(), './build'), cb);
 }
 exports.deploy = deploy;
@@ -442,7 +408,7 @@ function serve() {
 exports.build = series(
 	parallel(clearBuildDir, writePugMixinsFile),
 	parallel(compilePugFast, copyAssets, generateSvgSprite),
-	parallel(copyAdditions, copyFonts, copyImg, copySvg, copyVideo),
+	parallel(copyAdditions, copyFonts, copyImg, copySvg),
 	parallel(writeSassImportsFile),
 	parallel(compileSass, buildJs)
 );
@@ -450,7 +416,7 @@ exports.build = series(
 exports.default = series(
 	parallel(clearBuildDir, writePugMixinsFile),
 	parallel(compilePugFast, copyAssets, generateSvgSprite),
-	parallel(copyAdditions, copyFonts, copyImg, copySvg, copyVideo),
+	parallel(copyAdditions, copyFonts, copyImg, copySvg),
 	parallel(writeSassImportsFile),
 	parallel(compileSass, buildJs),
 	serve,

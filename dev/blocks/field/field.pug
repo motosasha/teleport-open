@@ -38,7 +38,11 @@ mixin field_date_period(label, info, mod)
 	.field(class= mod)
 		label.field__inner
 			.field__label!= label
-			input.field__input.input.input_date_period(type='text', placeholder='Выберите период', required)
+			.field__row
+				input.field__input.input.input_datepicker(type='text', placeholder='Укажите количество дней', required)
+				.button.button_icon.button_datepicker
+					svg.button__icon.svg
+						use(xlink:href='img/svgSprite.svg#icon__calendar')
 		.field__info!= info
 
 mixin field_select(label, mod, options)

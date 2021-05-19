@@ -66,4 +66,16 @@
 			line-height: 120%;
 		}
 	}
+	&_icon {
+		padding: 6px;
+		width: 40px;
+		.input + & {
+			border-radius: 0 4px 4px 0;
+		}
+	}
+	&__icon {
+		fill: $monochrome_10;
+		height: 28px;
+		width: 28px;
+	}
 }

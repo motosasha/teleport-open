@@ -22,9 +22,11 @@
 	&:focus {
 		border: 1px solid $blue_01;
 	}
-	&_date,
-	&_date_period {
+	&_date {
 		background: url(/img/svgSprite.svg#icon__calendar-view) no-repeat right 8px top 8px, $monochrome_08;
 		background-size: 24px 24px;
+	}
+	&_datepicker {
+		border-radius: 4px 0 0 4px;
 	}
 }

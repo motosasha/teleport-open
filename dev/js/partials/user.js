@@ -23,10 +23,32 @@ $(document).ready(function() {
 	});
 	// date picker
 	$('.input_date').datepicker();
-	$('.input_date_period').datepicker({
-		minDate: new Date(),
-		range: true,
-		multipleDatesSeparator: " – "
+	// date picker range
+	function parseDate(str) {
+		let mdy = str.split('.');
+		return new Date(mdy[2], mdy[0]-1, mdy[1]);
+	}
+	function dateDiff(first, second) {
+		return Math.round((second-first)/(1000*60*60*24));
+	}
+	let $btn = $('.button_datepicker'),
+		$input = $('.input_datepicker'),
+		dp = $input.datepicker({
+			dateFormat: 'mm.dd.yyyy',
+			minDate: new Date(),
+			range: true,
+			onSelect: function onSelect(selectedDates) {
+				if (selectedDates !== undefined && selectedDates !== '' && selectedDates.indexOf(',') > -1){
+					let dates = selectedDates.split(',');
+					console.log(parseDate(dates[0]));
+					console.log(parseDate(dates[1]));
+					$input.val(dateDiff(parseDate(dates[0]), parseDate(dates[1])) + 1);
+				}
+			}
+		});
+	$btn.on('click', function() {
+		dp.show();
+		$input.focus();
 	});
 	// calculator
 	let calcExec = $('#calcExec'),
@@ -98,13 +120,11 @@ $(document).ready(function() {
 			},
 		},
 	});
-
 	// modals
 	const modals = new HystModal({
 		linkAttributeName: "data-hystmodal",
 		catchFocus: false
 	});
-
 	// drop nav
 	let page = document.querySelector('.page');
 	let headerDropTrigger = document.querySelector('.header-nav__trigger');
@@ -116,7 +136,6 @@ $(document).ready(function() {
 			page.classList.remove('page_nav_open');
 		}
 	});
-
 	// scroll
 	$('.header a.header-nav__text').on('click', function(event) {
 		if (this.hash !== "") {
@@ -131,7 +150,6 @@ $(document).ready(function() {
 			}
 		}
 	});
-
 	// to top
 	let btn = $('.page__to-top');
 	$(window).scroll(function() {
@@ -145,7 +163,6 @@ $(document).ready(function() {
 		e.preventDefault();
 		$('html, body').animate({scrollTop:0}, '300');
 	});
-
 	// aos
 	AOS.init({
 		easing: 'ease',
@@ -154,7 +171,6 @@ $(document).ready(function() {
 	if (document.readyState === 'complete') {
 		AOS.refresh();
 	}
-
 	// tippy
 	tippy('[data-tippy-content]');
 });
