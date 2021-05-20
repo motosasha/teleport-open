@@ -62,6 +62,12 @@ $(document).ready(function() {
 	$btn.on('click', function () {
 		onBtnClick = true;
 	});
+	$input.toArray().forEach(function(field){
+		new Cleave(field, {
+			delimiter: '',
+			numeral: true,
+		});
+	});
 	// calculator
 	let calcExec = $('#calcExec'),
 		calcPart = $('#calcPart'),

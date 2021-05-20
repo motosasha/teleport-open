@@ -39,7 +39,7 @@ mixin field_date_period(label, info, mod)
 		label.field__inner
 			.field__label!= label
 			.field__row
-				input.field__input.input.input_datepicker(type='text', placeholder='Укажите количество дней', required)
+				input.field__input.input.input_datepicker(type='text', placeholder='Укажите количество дней', pattern='^[ 0-9]+$', required)
 				.button.button_icon.button_datepicker
 					svg.button__icon.svg
 						use(xlink:href='img/svgSprite.svg#icon__calendar')
