@@ -26,29 +26,41 @@ $(document).ready(function() {
 	// date picker range
 	function parseDate(str) {
 		let mdy = str.split('.');
-		return new Date(mdy[2], mdy[0]-1, mdy[1]);
+		return new Date(mdy[2], mdy[0] - 1, mdy[1]);
 	}
 	function dateDiff(first, second) {
-		return Math.round((second-first)/(1000*60*60*24));
+		return Math.round((second - first) / (1000 * 60 * 60 * 24));
 	}
-	let $btn = $('.button_datepicker'),
-		$input = $('.input_datepicker'),
-		dp = $input.datepicker({
-			dateFormat: 'mm.dd.yyyy',
-			minDate: new Date(),
-			range: true,
-			onSelect: function onSelect(selectedDates) {
-				if (selectedDates !== undefined && selectedDates !== '' && selectedDates.indexOf(',') > -1){
-					let dates = selectedDates.split(',');
-					console.log(parseDate(dates[0]));
-					console.log(parseDate(dates[1]));
-					$input.val(dateDiff(parseDate(dates[0]), parseDate(dates[1])) + 1);
+	let onBtnClick = false,
+		$btn = $('.button_datepicker'),
+		$input = $('.input_datepicker');
+	$input.datepicker({
+		dateFormat: 'mm.dd.yyyy',
+		minDate: new Date(),
+		range: true,
+		onShow: function (inst){
+			if (!onBtnClick) {
+				let $el = inst.$el;
+				inst.$el = $('body');
+				inst.hide();
+				inst.$el = $el;
+			}
+		},
+		onSelect: function onSelect(selectedDates, date) {
+			if (date instanceof Array) {
+				if (date.length === 2) {
+					$input.val(dateDiff(date[0], date[1]) + 1);
+				} else {
+					$input.val('');
 				}
 			}
-		});
-	$btn.on('click', function() {
-		dp.show();
-		$input.focus();
+		},
+		onHide: function () {
+			onBtnClick = false;
+		}
+	});
+	$btn.on('click', function () {
+		onBtnClick = true;
 	});
 	// calculator
 	let calcExec = $('#calcExec'),
@@ -63,15 +75,13 @@ $(document).ready(function() {
 			calcGO.prop('disabled', false);
 			calcVA.prop('disabled', true);
 			calcRadio.prop('checked', false);
-		}
-		else if ($(this).val() === '1') {
+		} else if ($(this).val() === '1') {
 			calcExec.prop('checked', true);
 			calcPart.prop('disabled', false);
 			calcGO.prop('disabled', false);
 			calcVA.removeAttr("disabled");
 			calcRadio.prop('checked', false);
-		}
-		else if ($(this).val() === '2') {
+		} else if ($(this).val() === '2') {
 			calcExec.prop('checked', true);
 			calcPart.prop('disabled', true);
 			calcGO.prop('disabled', true);
@@ -161,7 +171,7 @@ $(document).ready(function() {
 	});
 	btn.on('click', function(e) {
 		e.preventDefault();
-		$('html, body').animate({scrollTop:0}, '300');
+		$('html, body').animate({scrollTop: 0}, '300');
 	});
 	// aos
 	AOS.init({
